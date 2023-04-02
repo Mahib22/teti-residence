@@ -86,17 +86,18 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
     </template>
     <template #default="{ isShowMenu }">
       <NavbarCollapse :isShowMenu="isShowMenu">
-        <NavbarLink is-active>Home</NavbarLink>
-        <NavbarLink>Accomodations</NavbarLink>
-        <NavbarLink>Gallery</NavbarLink>
-        <NavbarLink>News</NavbarLink>
-        <NavbarLink>Contact</NavbarLink>
+        <NavbarLink link="#" is-active>Home</NavbarLink>
+        <NavbarLink link="#">Accomodations</NavbarLink>
+        <NavbarLink link="#">Gallery</NavbarLink>
+        <NavbarLink link="#">News</NavbarLink>
+        <NavbarLink link="#">Contact</NavbarLink>
+        <NavbarLink link="#" class="lg:hidden">Book Now</NavbarLink>
       </NavbarCollapse>
     </template>
     <template #right-side>
       <router-link
         to="#"
-        class="text-green-500 hover:text-white border border-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0"
+        class="hidden lg:block text-green-500 hover:text-white border border-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0"
       >
         Book Now
       </router-link>

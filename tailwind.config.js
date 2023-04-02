@@ -8,6 +8,10 @@ module.exports = {
   ],
   plugins: [require("flowbite/plugin")],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 5s linear infinite",
+      },
+    },
   },
 };
