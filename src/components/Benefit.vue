@@ -1,5 +1,5 @@
 <template>
-  <section class="container px-5 py-12 mx-auto overflow-hidden">
+  <section class="container px-5 py-12 mx-auto overflow-hidden font-inter">
     <div class="mx-auto flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto">
         <img alt="img" class="h-3/4" :src="'img/gallery/' + image_default" />
@@ -21,8 +21,10 @@
 
       <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-24 lg:mt-0">
         <div class="grid grid-cols-1 divide-y-2">
-          <div class="flex flex-wrap items-center mb-8">
-            <h1 class="text-4xl font-medium mr-8">Why Choose Us</h1>
+          <div class="flex flex-wrap items-center mb-6">
+            <h1 class="text-6xl font-medium mr-8 font-italian">
+              Why Choose Us
+            </h1>
             <img src="img/icon/right-line.svg" class="h-4" alt="Right Line" />
           </div>
 

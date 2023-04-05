@@ -3,15 +3,16 @@ import { Rating } from "flowbite-vue";
 </script>
 
 <template>
-  <section class="container px-5 py-4 mx-auto overflow-hidden">
+  <section class="container px-5 py-4 mx-auto overflow-hidden font-inter">
     <div class="mx-auto flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto p-8">
-        <h1 class="text-2xl md:text-5xl">
+        <h1 class="text-4xl md:text-6xl font-italian">
           Listen to What They All Have to Say
         </h1>
         <div class="flex justify-end">
           <button
             type="button"
+            @click="myCarousel.prev()"
             class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
           >
             <svg
@@ -31,6 +32,7 @@ import { Rating } from "flowbite-vue";
           </button>
           <button
             type="button"
+            @click="myCarousel.next()"
             class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
           >
             <svg
@@ -52,7 +54,12 @@ import { Rating } from "flowbite-vue";
       </div>
 
       <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-6 lg:mt-0">
-        <Carousel :breakpoints="testimoniSlide" :autoplay="2000">
+        <Carousel
+          :breakpoints="testimoniSlide"
+          :autoplay="2000"
+          :wrap-around="true"
+          ref="myCarousel"
+        >
           <Slide v-for="slide in 10" :key="slide">
             <div
               class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-100"
@@ -83,6 +90,8 @@ import { Rating } from "flowbite-vue";
 
 <script>
 import { Carousel, Slide } from "vue3-carousel";
+import { ref } from "vue";
+const myCarousel = ref(null);
 
 export default {
   name: "Client",

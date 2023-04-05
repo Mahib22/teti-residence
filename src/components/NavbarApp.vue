@@ -3,7 +3,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
 </script>
 
 <template>
-  <div class="border-b-2 border-gray-200">
+  <div class="border-b-2 border-gray-200 font-inter">
     <div
       class="container mx-auto py-3 flex justify-between flex-wrap flex-col items-center md:flex-row md:px-2"
     >

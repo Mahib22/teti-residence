@@ -9,6 +9,11 @@ module.exports = {
   plugins: [require("flowbite/plugin")],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        italian: ["Italianno", "cursive"],
+      },
+
       animation: {
         "spin-slow": "spin 5s linear infinite",
       },

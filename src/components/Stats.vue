@@ -1,7 +1,7 @@
 <template>
-  <section class="container py-8 mx-auto">
+  <section class="container py-8 mx-auto font-inter">
     <div class="flex flex-col md:flex-row items-center justify-between">
-      <div class="-mt-20 md:-mt-36 ml-0 md:ml-20">
+      <div class="-mt-20 md:-mt-36 ml-0 md:ml-16">
         <img
           src="img/icon/spin-text.svg"
           class="animate-spin-slow"
@@ -10,10 +10,12 @@
       </div>
 
       <div
-        class="border-b border-gray-400 flex flex-col md:flex-row items-center justify-end py-2"
+        class="border-b border-gray-400 flex flex-col md:flex-row items-center justify-end py-3"
       >
-        <div class="p-4 w-60 text-center md:text-left">
-          <p class="text-4xl font-light">Comfort is Our Priority</p>
+        <div class="px-5 w-60 text-center md:text-left">
+          <p class="text-5xl font-light font-italian">
+            Comfort is Our Priority
+          </p>
         </div>
 
         <div

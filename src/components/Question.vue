@@ -8,8 +8,10 @@ import {
 </script>
 
 <template>
-  <section class="bg-gray-900 py-8 text-center">
-    <h1 class="text-white text-5xl font-light">Frequently Asked Questions</h1>
+  <section class="bg-gray-900 py-8 text-center font-inter">
+    <h1 class="text-white text-6xl font-light font-italian">
+      Frequently Asked Questions
+    </h1>
   </section>
 
   <section class="container mx-auto py-8 px-4">
