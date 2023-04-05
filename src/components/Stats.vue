@@ -1,7 +1,7 @@
 <template>
   <section class="container py-8 mx-auto">
     <div class="flex flex-col md:flex-row items-center justify-between">
-      <div class="">
+      <div class="-mt-20 md:-mt-36 ml-0 md:ml-20">
         <img
           src="img/icon/spin-text.svg"
           class="animate-spin-slow"

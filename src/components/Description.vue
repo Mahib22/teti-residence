@@ -17,10 +17,10 @@
     </p>
   </section>
 
-  <div
+  <section
     class="bg-fixed h-80 bg-cover bg-center"
-    style="background-image: url(img/background.jpg)"
-  ></div>
+    style="background-image: url('img/background.jpg')"
+  ></section>
 </template>
 
 <script>

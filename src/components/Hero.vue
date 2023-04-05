@@ -1,106 +1,41 @@
 <template>
-  <div id="gallery" class="relative w-full" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-      <!-- Item 1 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt=""
-        />
-      </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-        <img
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt=""
-        />
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt=""
-        />
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt=""
-        />
-      </div>
-      <!-- Item 5 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-          class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt=""
-        />
-      </div>
-    </div>
-    <!-- Slider controls -->
-    <button
-      type="button"
-      class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-prev
-    >
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+  <Carousel>
+    <Slide v-for="n in 5" :key="n">
+      <div
+        class="h-96 bg-cover w-full"
+        style="background-image: url('img/gallery/img4.jpg')"
       >
-        <svg
-          aria-hidden="true"
-          class="w-6 h-6 text-white dark:text-gray-800"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"
-          ></path>
-        </svg>
-        <span class="sr-only">Previous</span>
-      </span>
-    </button>
-    <button
-      type="button"
-      class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-next
-    >
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-      >
-        <svg
-          aria-hidden="true"
-          class="w-6 h-6 text-white dark:text-gray-800"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"
-          ></path>
-        </svg>
-        <span class="sr-only">Next</span>
-      </span>
-    </button>
-  </div>
+        <div class="text-left mt-60">
+          <h1 class="mb-2 pl-4 md:pl-12 text-4xl font-light text-white">
+            Deluxe Room
+          </h1>
+          <div class="flex items-center">
+            <hr class="border-gray-300 w-4/5" />
+            <h1 class="pl-8 text-2xl font-bold">
+              <span class="text-white">0{{ n }}</span
+              ><span class="text-gray-600"> / 05</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </Slide>
+
+    <template #addons>
+      <Navigation />
+    </template>
+  </Carousel>
 </template>
 
 <script>
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Navigation } from "vue3-carousel";
+
 export default {
   name: "Hero",
+  components: {
+    Carousel,
+    Slide,
+    Navigation,
+  },
 };
 </script>

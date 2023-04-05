@@ -1,13 +1,25 @@
 <template>
   <section class="container px-5 py-12 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap">
-      <img
-        alt="ecommerce"
-        class="lg:w-1/3 w-full lg:h-auto h-64 object-cover object-center rounded"
-        src="https://dummyimage.com/400x400"
-      />
+      <div class="lg:w-1/3 w-full lg:h-auto">
+        <img alt="img" class="h-3/4" :src="'img/gallery/' + image_default" />
+        <Carousel :items-to-show="3" :wrap-around="true" class="my-2">
+          <Slide v-for="slide in slides" :key="slide">
+            <div
+              @click="changeImage(slide)"
+              :class="slide == image_default ? '' : 'opacity-25'"
+            >
+              <img
+                :src="'img/gallery/' + slide"
+                :alt="slide"
+                class="px-1 h-36"
+              />
+            </div>
+          </Slide>
+        </Carousel>
+      </div>
 
-      <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-6 lg:mt-0">
+      <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-24 lg:mt-0">
         <div class="grid grid-cols-1 divide-y-2">
           <div class="flex flex-wrap items-center mb-8">
             <h1 class="text-4xl font-medium mr-8">Why Choose Us</h1>
@@ -34,10 +46,18 @@
 </template>
 
 <script>
+import { Carousel, Slide } from "vue3-carousel";
+
 export default {
   name: "Benefit",
+  components: {
+    Carousel,
+    Slide,
+  },
   data() {
     return {
+      image_default: "img1.jpg",
+      slides: ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"],
       items: [
         {
           icon: "map",
@@ -65,6 +85,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    changeImage(urlImage) {
+      this.image_default = urlImage;
+    },
   },
 };
 </script>

@@ -1,0 +1,16 @@
+.carousel__prev,
+.carousel__next,
+.carousel__prev:hover,
+.carousel__next:hover {
+  border-width: 0;
+  color: #fff;
+}
+
+.carousel__next--disabled,
+.carousel__prev--disabled {
+  display: none;
+}
+
+.carousel__slide {
+  padding: 0;
+}

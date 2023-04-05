@@ -8,11 +8,11 @@ import {
 </script>
 
 <template>
-  <div class="bg-gray-900 py-8 text-center">
+  <section class="bg-gray-900 py-8 text-center">
     <h1 class="text-white text-5xl font-light">Frequently Asked Questions</h1>
-  </div>
+  </section>
 
-  <div class="container mx-auto py-8 px-4">
+  <section class="container mx-auto py-8 px-4">
     <Accordion flush>
       <accordion-panel v-for="n in 4" :key="n">
         <accordion-header
@@ -29,7 +29,7 @@ import {
         </accordion-content>
       </accordion-panel>
     </Accordion>
-  </div>
+  </section>
 </template>
 
 <script>
