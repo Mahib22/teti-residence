@@ -1,9 +1,9 @@
 <template>
-  <Carousel :autoplay="4000" :wrap-around="true">
+  <Carousel :autoplay="4000">
     <Slide v-for="n in 5" :key="n">
       <div
         class="h-screen bg-cover w-full"
-        style="background-image: url('img/gallery/img4.jpg')"
+        style="background-image: url('img/hero.png')"
       >
         <div class="text-left mt-96">
           <h1

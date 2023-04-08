@@ -78,7 +78,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
     </div>
   </div>
 
-  <Navbar>
+  <Navbar class="sticky z-20 top-0 left-0 font-inter">
     <template #logo>
       <router-link to="/">
         <img src="img/logo.png" class="h-20" alt="Company Logo" />
@@ -97,7 +97,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
     <template #right-side>
       <router-link
         to="#"
-        class="hidden lg:block text-green-500 hover:text-white border border-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0"
+        class="relative btn-hover hidden lg:block text-green-500 border hover:text-white border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0"
       >
         Book Now
       </router-link>
@@ -110,3 +110,21 @@ export default {
   name: "NavbarApp",
 };
 </script>
+
+<style scoped>
+.btn-hover::before {
+  background: rgb(22 163 74);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.btn-hover:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+</style>

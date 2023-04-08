@@ -5,7 +5,7 @@ import { Rating } from "flowbite-vue";
 <template>
   <section class="container px-5 py-4 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap">
-      <div class="lg:w-1/3 w-full lg:h-auto p-8">
+      <div class="lg:w-1/3 w-full lg:h-auto p-4">
         <h1 class="text-4xl md:text-6xl font-italian">
           Listen to What They All Have to Say
         </h1>

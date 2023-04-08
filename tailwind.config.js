@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        italian: ["Italianno", "cursive"],
+        italian: ["Italiana", "serif"],
       },
 
       animation: {

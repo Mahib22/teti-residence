@@ -1,11 +1,7 @@
 <template>
   <Carousel>
-    <Slide v-for="slide in slides" :key="slide">
-      <img
-        :src="'img/gallery/' + slide"
-        :alt="slide"
-        class="h-96 w-full bg-cover"
-      />
+    <Slide v-for="n in 5" :key="n">
+      <img src="img/hero.png" alt="img" class="h-screen w-full bg-cover" />
     </Slide>
 
     <template #addons>
@@ -16,7 +12,7 @@
   <section class="container px-5 py-8 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap items-center">
       <div class="lg:w-1/3 w-full lg:h-auto">
-        <h1 class="text-6xl font-bold font-italian text-center">
+        <h1 class="text-5xl font-semibold font-italian text-center">
           Elevate Your Stay
         </h1>
       </div>
@@ -41,11 +37,6 @@ export default {
     Carousel,
     Slide,
     Navigation,
-  },
-  data() {
-    return {
-      slides: ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"],
-    };
   },
 };
 </script>

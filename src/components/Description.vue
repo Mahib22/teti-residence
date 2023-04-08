@@ -5,7 +5,7 @@
       <p class="text-gray-500 font-inter">Welcome to The Teti Residence</p>
       <img src="img/icon/right-line.svg" class="h-4" alt="Right Line" />
     </div>
-    <h1 class="text-6xl py-3 font-italian">
+    <h1 class="md:text-6xl py-3 font-italian text-4xl">
       Get to Know About The Teti Residence
     </h1>
     <p class="text-gray-400 pt-2 font-inter">
@@ -20,8 +20,8 @@
   </section>
 
   <section
-    class="bg-fixed h-80 bg-cover bg-center"
-    style="background-image: url('img/background.jpg')"
+    class="bg-fixed h-96 bg-cover bg-center"
+    style="background-image: url('img/background.png')"
   ></section>
 </template>
 

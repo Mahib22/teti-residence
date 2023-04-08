@@ -22,7 +22,7 @@
       <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-24 lg:mt-0">
         <div class="grid grid-cols-1 divide-y-2">
           <div class="flex flex-wrap items-center mb-6">
-            <h1 class="text-6xl font-medium mr-8 font-italian">
+            <h1 class="text-5xl font-medium mr-8 font-italian">
               Why Choose Us
             </h1>
             <img src="img/icon/right-line.svg" class="h-4" alt="Right Line" />
@@ -62,8 +62,8 @@ export default {
   },
   data() {
     return {
-      image_default: "img1.jpg",
-      slides: ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"],
+      image_default: "img1.png",
+      slides: ["img1.png", "img2.png", "img3.png"],
       items: [
         {
           icon: "map",

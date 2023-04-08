@@ -13,7 +13,7 @@
         class="border-b border-gray-400 flex flex-col md:flex-row items-center justify-end py-3"
       >
         <div class="px-5 w-60 text-center md:text-left">
-          <p class="text-5xl font-light font-italian">
+          <p class="text-4xl font-semibold font-italian">
             Comfort is Our Priority
           </p>
         </div>

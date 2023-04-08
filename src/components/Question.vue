@@ -1,7 +1,9 @@
 <template>
   <section class="bg-black py-8">
-    <h1 class="text-gray-300 text-6xl font-light font-italian">
-      <marquee-text :repeat="5"> Frequently Asked Questions </marquee-text>
+    <h1 class="text-gray-300 text-5xl font-light font-italian">
+      <marquee-text :repeat="5">
+        Frequently Asked Questions <span class="px-2">•</span>
+      </marquee-text>
     </h1>
   </section>
 
