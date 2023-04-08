@@ -125,6 +125,5 @@ export default {
 
 .btn-hover:hover::before {
   transform: scaleX(1);
-  transform-origin: right;
 }
 </style>

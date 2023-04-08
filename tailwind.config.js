@@ -17,6 +17,10 @@ module.exports = {
       animation: {
         "spin-slow": "spin 5s linear infinite",
       },
+
+      height: {
+        128: "32rem",
+      },
     },
   },
 };

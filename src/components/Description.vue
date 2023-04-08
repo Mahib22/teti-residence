@@ -20,7 +20,7 @@
   </section>
 
   <section
-    class="bg-fixed h-96 bg-cover bg-center"
+    class="bg-fixed h-128 bg-cover bg-center"
     style="background-image: url('img/background.png')"
   ></section>
 </template>
