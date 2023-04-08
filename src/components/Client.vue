@@ -3,7 +3,7 @@ import { Rating } from "flowbite-vue";
 </script>
 
 <template>
-  <section class="container px-5 py-4 mx-auto overflow-hidden font-inter">
+  <section class="container px-5 py-4 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto p-8">
         <h1 class="text-4xl md:text-6xl font-italian">
@@ -53,7 +53,7 @@ import { Rating } from "flowbite-vue";
         </div>
       </div>
 
-      <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-6 lg:mt-0">
+      <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-6 lg:mt-0 font-inter">
         <Carousel
           :breakpoints="testimoniSlide"
           :autoplay="2000"

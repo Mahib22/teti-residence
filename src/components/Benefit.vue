@@ -1,5 +1,5 @@
 <template>
-  <section class="container px-5 py-12 mx-auto overflow-hidden font-inter">
+  <section class="container px-5 py-12 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto">
         <img alt="img" class="h-3/4" :src="'img/gallery/' + image_default" />
@@ -28,7 +28,11 @@
             <img src="img/icon/right-line.svg" class="h-4" alt="Right Line" />
           </div>
 
-          <div class="py-2" v-for="(item, index) in items" :key="index">
+          <div
+            class="py-2 font-inter"
+            v-for="(item, index) in items"
+            :key="index"
+          >
             <div class="flex items-center">
               <img
                 :src="'img/icon/' + item.icon + '.svg'"

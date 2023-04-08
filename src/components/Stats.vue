@@ -1,5 +1,5 @@
 <template>
-  <section class="container py-8 mx-auto font-inter">
+  <section class="container py-8 mx-auto" @scroll="handleScroll">
     <div class="flex flex-col md:flex-row items-center justify-between">
       <div class="-mt-20 md:-mt-36 ml-0 md:ml-16">
         <img
@@ -19,11 +19,17 @@
         </div>
 
         <div
-          class="flex flex-wrap justify-center md:grid md:grid-cols-4 md:divide-x text-center"
+          class="flex flex-wrap justify-center md:grid md:grid-cols-4 md:divide-x text-center font-inter"
         >
           <div class="px-6 py-2" v-for="(item, index) in items" :key="index">
             <h1 class="font-bold text-4xl">
-              {{ item.number }}<span class="text-blue-700">+</span>
+              <vue3-autocounter
+                ref="counter"
+                :startAmount="0"
+                :endAmount="item.number"
+                :duration="10"
+              />
+              <span class="text-blue-700">+</span>
             </h1>
             <p class="text-gray-500">{{ item.title }}</p>
           </div>
@@ -34,8 +40,13 @@
 </template>
 
 <script>
+import Vue3autocounter from "vue3-autocounter";
+
 export default {
   name: "Stats",
+  components: {
+    "vue3-autocounter": Vue3autocounter,
+  },
   data() {
     return {
       items: [
@@ -57,6 +68,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handleScroll() {
+      this.$refs.counter.start();
+    },
   },
 };
 </script>
