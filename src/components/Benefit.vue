@@ -2,7 +2,11 @@
   <section class="container px-5 py-12 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto">
-        <img alt="img" class="h-3/4" :src="'img/gallery/' + image_default" />
+        <img
+          alt="img"
+          class="h-3/4 object-cover"
+          :src="'img/gallery/' + image_default"
+        />
         <Carousel :items-to-show="3" :wrap-around="true" class="my-2">
           <Slide v-for="slide in slides" :key="slide">
             <div
@@ -12,7 +16,7 @@
               <img
                 :src="'img/gallery/' + slide"
                 :alt="slide"
-                class="px-1 h-36"
+                class="px-1 h-36 object-cover"
               />
             </div>
           </Slide>

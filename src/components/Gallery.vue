@@ -1,7 +1,7 @@
 <template>
   <Carousel>
     <Slide v-for="n in 5" :key="n">
-      <img src="img/hero.png" alt="img" class="h-screen w-full bg-cover" />
+      <img src="img/hero.png" alt="img" class="h-screen w-full object-cover" />
     </Slide>
 
     <template #addons>

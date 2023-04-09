@@ -19,10 +19,11 @@
     </p>
   </section>
 
-  <section
-    class="bg-fixed h-128 bg-cover bg-center"
-    style="background-image: url('img/background.png')"
-  ></section>
+  <iframe
+    src="https://www.youtube.com/embed/ZynMjLPYSVY"
+    frameborder="0"
+    class="h-128 w-full"
+  ></iframe>
 </template>
 
 <script>
