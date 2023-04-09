@@ -6,9 +6,17 @@
   color: #fff;
 }
 
+.carousel__next {
+  right: 20px !important;
+}
+
+.carousel__prev {
+  left: 20px !important;
+}
+
 .carousel__next--disabled,
 .carousel__prev--disabled {
-  display: none;
+  display: none !important;
 }
 
 .carousel__slide {

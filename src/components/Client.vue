@@ -13,7 +13,7 @@ import { Rating } from "flowbite-vue";
           <button
             type="button"
             @click="myCarousel.prev()"
-            class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
+            class="text-white bg-gray-300 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ import { Rating } from "flowbite-vue";
           <button
             type="button"
             @click="myCarousel.next()"
-            class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
+            class="text-white bg-gray-300 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,14 +62,14 @@ import { Rating } from "flowbite-vue";
         >
           <Slide v-for="slide in 10" :key="slide">
             <div
-              class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-100"
+              class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-900 text-gray-500 hover:text-gray-100 cursor-pointer"
             >
-              <p class="text-gray-700 mb-4">
+              <p class="mb-4">
                 "Ga berisik, tenang dan gampang order makanan dari kamar."
               </p>
               <Rating :rating="4" class="mb-2 flex justify-center" />
               <p class="text-center">Nindi</p>
-              <p class="text-gray-500 text-center">UI/UX Designer</p>
+              <p class="text-center">UI/UX Designer</p>
             </div>
           </Slide>
         </Carousel>

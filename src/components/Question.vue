@@ -8,13 +8,17 @@
   </section>
 
   <section class="container mx-auto py-8 px-4 font-inter">
-    <details v-for="n in 4" :key="n">
+    <details
+      v-for="n in 4"
+      :key="n"
+      class="transition duration-150 ease-in-out"
+    >
       <summary
         class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-900 border-b border-gray-200 cursor-pointer"
       >
         Are the facilities provided in accordance with the price listed ?
       </summary>
-      <p class="py-5 border-b border-gray-200 text-gray-500">
+      <p class="py-8 border-b border-gray-200 text-gray-600">
         We provide many facilities for you. There are facilities such as a AC,
         Wifi, Lemari, TV Cable, Spring Bed, Water Heater, Kamar Mandi Dalam,
         Dapur Bersama, Kulkas Bersama, Area Parkir Motor, Security 1 x 24 Jam,
@@ -37,11 +41,9 @@ export default {
 
 <style scoped>
 details summary::after {
-  content: "↘";
-  font-size: 1.5rem;
-  font-weight: bold;
+  content: url("../../public/img/icon/arrow-down-right.svg");
 }
 details[open] > summary::after {
-  content: "→";
+  content: url("../../public/img/icon/arrow-right.svg");
 }
 </style>
