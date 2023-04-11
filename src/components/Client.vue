@@ -3,17 +3,17 @@ import { Rating } from "flowbite-vue";
 </script>
 
 <template>
-  <section class="container px-5 py-4 mx-auto overflow-hidden">
-    <div class="mx-auto flex flex-wrap">
+  <section class="px-5 py-4 2xl:px-7 overflow-hidden">
+    <div class="flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto p-4">
-        <h1 class="text-4xl md:text-6xl font-italian">
+        <h1 class="text-4xl md:text-6xl 2xl:text-7xl font-italian">
           Listen to What They All Have to Say
         </h1>
         <div class="flex justify-end">
           <button
             type="button"
             @click="myCarousel.prev()"
-            class="text-white bg-gray-300 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
+            class="text-white bg-gray-300 hover:bg-gray-900 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ import { Rating } from "flowbite-vue";
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-6 h-6"
+              class="w-6 h-6 2xl:w-12 2xl:h-12"
             >
               <path
                 stroke-linecap="round"
@@ -33,7 +33,7 @@ import { Rating } from "flowbite-vue";
           <button
             type="button"
             @click="myCarousel.next()"
-            class="text-white bg-gray-300 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
+            class="text-white bg-gray-300 hover:bg-gray-900 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ import { Rating } from "flowbite-vue";
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-6 h-6"
+              class="w-6 h-6 2xl:w-12 2xl:h-12"
             >
               <path
                 stroke-linecap="round"
@@ -62,7 +62,7 @@ import { Rating } from "flowbite-vue";
         >
           <Slide v-for="slide in 10" :key="slide">
             <div
-              class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-900 text-gray-500 hover:text-gray-100 cursor-pointer"
+              class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-900 text-gray-500 hover:text-gray-100 cursor-pointer 2xl:text-4xl"
             >
               <p class="mb-4">
                 "Ga berisik, tenang dan gampang order makanan dari kamar."
@@ -109,6 +109,9 @@ export default {
       clientSlide: {
         768: {
           itemsToShow: 4,
+        },
+        2560: {
+          itemsToShow: 8,
         },
       },
     };

@@ -5,14 +5,14 @@
         class="h-screen bg-cover w-full"
         style="background-image: url('img/hero.png')"
       >
-        <div class="text-left mt-100">
+        <div class="text-left mt-100 md:mt-35">
           <h1
-            class="mb-2 pl-4 md:pl-12 text-6xl font-light text-white font-italian"
+            class="mb-2 pl-4 md:pl-12 text-2xl md:text-6xl font-light text-white font-italian"
           >
             Deluxe Room
           </h1>
           <div class="flex items-center font-inter">
-            <div class="w-85 bg-gray-400 h-0.5">
+            <div class="w-3/5 md:w-85 bg-gray-400 h-0.5">
               <div class="bg-gray-100 h-0.5 progress"></div>
             </div>
 

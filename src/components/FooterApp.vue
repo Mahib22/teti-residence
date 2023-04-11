@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-200 font-inter">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-      <div class="md:flex md:justify-between items-center">
+    <div class="w-full p-4 2xl:px-8 py-6 lg:py-8">
+      <div class="md:flex md:justify-between items-center 2xl:text-3xl">
         <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
           <a href="#" class="text-gray-500 hover:text-gray-900"
             >Accomodations</a
@@ -11,7 +11,11 @@
         </div>
 
         <div class="py-2">
-          <img src="img/logo.png" class="h-20 mx-auto" alt="Company Logo" />
+          <img
+            src="img/logo.png"
+            class="h-20 2xl:h-28 mx-auto"
+            alt="Company Logo"
+          />
         </div>
 
         <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
@@ -22,7 +26,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-5 h-5"
+              class="w-5 h-5 2xl:w-10 2xl:h-10"
             >
               <path
                 stroke-linecap="round"
@@ -33,7 +37,7 @@
           </a>
           <a href="#" class="text-gray-500 hover:text-gray-900">
             <svg
-              class="w-5 h-5"
+              class="w-5 h-5 2xl:w-10 2xl:h-10"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -47,7 +51,7 @@
           </a>
           <a href="#" class="text-gray-500 hover:text-gray-900">
             <svg
-              class="w-5 h-5"
+              class="w-5 h-5 2xl:w-10 2xl:h-10"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -65,10 +69,10 @@
       <hr class="my-6 border-gray-400 sm:mx-auto lg:my-8" />
 
       <div class="sm:flex sm:items-center sm:justify-between">
-        <p class="text-sm text-gray-500 mb-4 md:mb-0">
+        <p class="text-sm 2xl:text-3xl text-gray-500 mb-4 md:mb-0">
           © 2023 The Teti Residence | All Rights Reserved.
         </p>
-        <p class="text-sm text-gray-500">
+        <p class="text-sm 2xl:text-3xl text-gray-500">
           Link luar : <a href="#" class="underline">Mamikos</a> |
           <a href="#" class="underline">OLX</a> |
           <a href="#" class="underline">Traveloka</a> |

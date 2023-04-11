@@ -5,7 +5,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
 <template>
   <div class="border-b-2 border-gray-200 font-inter">
     <div
-      class="container mx-auto py-3 flex justify-between flex-wrap flex-col items-center md:flex-row md:px-2"
+      class="container mx-auto py-3 2xl:py-5 flex justify-between flex-wrap flex-col items-center md:flex-row md:px-2"
     >
       <div class="flex items-center">
         <div class="flex items-center">
@@ -15,7 +15,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-4 h-4"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
           >
             <path
               stroke-linecap="round"
@@ -23,7 +23,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
               d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
             />
           </svg>
-          <a class="ml-2 text-sm text-gray-500">+6281315013050</a>
+          <a class="ml-2 text-sm 2xl:text-2xl text-gray-500">+6281315013050</a>
         </div>
         <div class="flex items-center ml-5">
           <svg
@@ -32,7 +32,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-4 h-4"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
           >
             <path
               stroke-linecap="round"
@@ -40,7 +40,9 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
               d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
             />
           </svg>
-          <a class="ml-2 text-sm text-gray-500">tetikost@gmail.com</a>
+          <a class="ml-2 text-sm 2xl:text-2xl text-gray-500"
+            >tetikost@gmail.com</a
+          >
         </div>
       </div>
       <div class="flex items-center">
@@ -50,7 +52,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-4 h-4"
+          class="w-4 h-4 2xl:w-8 2xl:h-8"
         >
           <path
             stroke-linecap="round"
@@ -65,7 +67,7 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-4 h-4"
+          class="w-4 h-4 2xl:w-8 2xl:h-8"
         >
           <path
             stroke-linecap="round"
@@ -73,31 +75,31 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
             d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
           />
         </svg>
-        <a class="ml-2 text-sm text-gray-500">EN / ID</a>
+        <a class="ml-2 text-sm 2xl:text-2xl text-gray-500">EN / ID</a>
       </div>
     </div>
   </div>
 
-  <Navbar class="sticky z-20 top-0 left-0 font-inter">
+  <Navbar class="sticky z-20 top-0 left-0 font-inter 2xl:h-32">
     <template #logo>
       <router-link to="/">
-        <img src="img/logo.png" class="h-20" alt="Company Logo" />
+        <img src="img/logo.png" class="h-20 2xl:h-28" alt="Company Logo" />
       </router-link>
     </template>
     <template #default="{ isShowMenu }">
       <NavbarCollapse :isShowMenu="isShowMenu">
-        <NavbarLink link="#" is-active>Home</NavbarLink>
-        <NavbarLink link="#">Accomodations</NavbarLink>
-        <NavbarLink link="#">Gallery</NavbarLink>
-        <NavbarLink link="#">News</NavbarLink>
-        <NavbarLink link="#">Contact</NavbarLink>
+        <NavbarLink link="#" class="2xl:text-3xl" is-active>Home</NavbarLink>
+        <NavbarLink link="#" class="2xl:text-3xl">Accomodations</NavbarLink>
+        <NavbarLink link="#" class="2xl:text-3xl">Gallery</NavbarLink>
+        <NavbarLink link="#" class="2xl:text-3xl">News</NavbarLink>
+        <NavbarLink link="#" class="2xl:text-3xl">Contact</NavbarLink>
         <NavbarLink link="#" class="lg:hidden">Book Now</NavbarLink>
       </NavbarCollapse>
     </template>
     <template #right-side>
       <router-link
         to="#"
-        class="relative btn-hover hidden lg:block text-green-500 border hover:text-white border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0"
+        class="relative btn-hover hidden lg:block text-green-500 border hover:text-white border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0 2xl:text-3xl"
       >
         Book Now
       </router-link>

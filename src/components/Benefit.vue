@@ -1,13 +1,13 @@
 <template>
-  <section class="container px-5 py-12 mx-auto overflow-hidden">
+  <section class="px-5 py-12 mx-auto overflow-hidden">
     <div class="mx-auto flex flex-wrap">
-      <div class="lg:w-1/3 w-full lg:h-auto">
+      <div class="md:w-1/3 w-full md:h-auto">
         <img
           alt="img"
-          class="h-3/4 object-cover"
+          class="h-3/4 object-cover w-full"
           :src="'img/gallery/' + image_default"
         />
-        <Carousel :items-to-show="3" :wrap-around="true" class="my-2">
+        <Carousel :items-to-show="3" :wrap-around="true" class="my-2 w-full">
           <Slide v-for="slide in slides" :key="slide">
             <div
               @click="changeImage(slide)"
@@ -23,29 +23,35 @@
         </Carousel>
       </div>
 
-      <div class="lg:w-2/3 w-full lg:pl-12 lg:py-6 mt-24 lg:mt-0">
+      <div class="md:w-2/3 w-full md:pl-12 md:py-6 mt-24 md:mt-0">
         <div class="grid grid-cols-1 divide-y-2">
           <div class="flex flex-wrap items-center mb-6">
-            <h1 class="text-5xl font-medium mr-8 font-italian">
+            <h1
+              class="text-2xl md:text-5xl 2xl:text-7xl font-medium mr-14 font-italian"
+            >
               Why Choose Us
             </h1>
-            <img src="img/icon/right-line.svg" class="h-4" alt="Right Line" />
+            <img
+              src="img/icon/right-line.svg"
+              class="h-4 hidden lg:block"
+              alt="Right Line"
+            />
           </div>
 
           <div
-            class="py-2 font-inter"
+            class="py-2 2xl:py-4 font-inter"
             v-for="(item, index) in items"
             :key="index"
           >
             <div class="flex items-center">
               <img
                 :src="'img/icon/' + item.icon + '.svg'"
-                class="h-6"
+                class="h-6 2xl:h-8"
                 alt="icon"
               />
-              <h2 class="font-bold py-2 ml-2">{{ item.title }}</h2>
+              <h2 class="font-bold py-2 ml-2 2xl:text-4xl">{{ item.title }}</h2>
             </div>
-            <p class="text-gray-500 py-2">
+            <p class="text-gray-500 py-2 2xl:text-2xl">
               {{ item.description }}
             </p>
           </div>
