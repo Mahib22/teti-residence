@@ -30,7 +30,7 @@
   <iframe
     src="https://www.youtube.com/embed/ZynMjLPYSVY"
     frameborder="0"
-    class="h-128 w-full"
+    class="h-128 2xl:h-142 w-full"
   ></iframe>
 </template>
 

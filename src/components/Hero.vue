@@ -5,7 +5,7 @@
         class="h-screen bg-cover w-full"
         style="background-image: url('img/hero.png')"
       >
-        <div class="text-left mt-100 md:mt-35">
+        <div class="text-left mt-100 md:mt-30 2xl:mt-45">
           <h1
             class="mb-2 pl-4 md:pl-12 text-2xl md:text-6xl font-light text-white font-italian"
           >

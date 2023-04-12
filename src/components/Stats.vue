@@ -19,7 +19,7 @@
         </div>
 
         <div
-          class="flex flex-wrap justify-center md:grid md:grid-cols-4 md:divide-x text-center font-inter md:px-4 2xl:px-12"
+          class="flex flex-wrap justify-center md:grid md:grid-cols-4 md:divide-x text-center font-inter md:px-8 2xl:px-24"
         >
           <div
             class="px-6 md:px-8 py-4 2xl:py-8"
