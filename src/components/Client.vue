@@ -3,7 +3,7 @@ import { Rating } from "flowbite-vue";
 </script>
 
 <template>
-  <section class="px-5 py-4 2xl:px-7 overflow-hidden">
+  <section class="p-5 2xl:px-9 2xl:py-16 overflow-hidden">
     <div class="flex flex-wrap">
       <div class="lg:w-1/3 w-full lg:h-auto p-4">
         <h1 class="text-4xl md:text-6xl 2xl:text-7xl font-italian">
@@ -62,7 +62,7 @@ import { Rating } from "flowbite-vue";
         >
           <Slide v-for="slide in 10" :key="slide">
             <div
-              class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-900 text-gray-500 hover:text-gray-100 cursor-pointer 2xl:text-4xl"
+              class="p-4 mx-2 bg-white border border-gray-200 hover:bg-gray-900 text-gray-500 hover:text-gray-100 cursor-pointer 2xl:text-3xl"
             >
               <p class="mb-4">
                 "Ga berisik, tenang dan gampang order makanan dari kamar."
@@ -77,9 +77,9 @@ import { Rating } from "flowbite-vue";
     </div>
   </section>
 
-  <hr class="border-gray-300 md:mx-8 mx-2" />
+  <hr class="border-gray-300 md:mx-8 m-2" />
 
-  <section class="py-8">
+  <section class="py-12">
     <Carousel :autoplay="2000" :breakpoints="clientSlide" :wrap-around="true">
       <Slide v-for="slide in 10" :key="slide">
         <img src="img/client/mamikos.png" alt="mamikos" />
