@@ -2,10 +2,10 @@
   <Carousel :autoplay="4000" :wrap-around="true">
     <Slide v-for="n in 5" :key="n">
       <div
-        class="h-screen bg-cover w-full"
+        class="h-72 md:h-screen bg-cover w-full"
         style="background-image: url('img/hero.png')"
       >
-        <div class="text-left mt-96 md:mt-35 2xl:mt-45">
+        <div class="text-left mt-48 md:mt-35 2xl:mt-45">
           <h1
             class="mb-2 pl-4 md:pl-12 text-2xl md:text-6xl font-light text-white font-italian"
           >

@@ -1,7 +1,9 @@
 <template>
   <footer class="bg-gray-200 font-inter">
     <div class="w-full p-4 pb-28 md:pb-0 2xl:px-8 py-6 lg:py-8">
-      <div class="md:flex md:justify-between items-center 2xl:text-3xl">
+      <div
+        class="flex flex-col md:flex-row md:justify-between items-center 2xl:text-3xl"
+      >
         <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
           <a href="#" class="text-gray-500 hover:text-gray-900"
             >Accomodations</a
@@ -10,7 +12,7 @@
           <a href="#" class="text-gray-500 hover:text-gray-900">Policy</a>
         </div>
 
-        <div class="py-2">
+        <div class="py-2 order-first md:order-none">
           <img
             src="img/logo.png"
             class="h-20 2xl:h-28 mx-auto"
