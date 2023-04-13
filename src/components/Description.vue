@@ -1,13 +1,17 @@
 <template>
   <section class="md:px-14 2xl:py-6 mb-8 mx-auto text-center">
     <div
-      class="flex flex-wrap items-center justify-center space-x-4 py-4 2xl:py-6"
+      class="flex flex-row md:flex-wrap items-center justify-center md:space-x-4 p-4 2xl:py-6"
     >
-      <img src="img/icon/left-line.svg" class="h-4" alt="Left Line" />
-      <p class="text-gray-500 font-inter 2xl:text-4xl">
+      <img src="img/icon/left-line.svg" class="h-1.5 md:h-4" alt="Left Line" />
+      <p class="text-gray-500 font-inter 2xl:text-4xl text-sm md:text-lg">
         Welcome to The Teti Residence
       </p>
-      <img src="img/icon/right-line.svg" class="h-4" alt="Right Line" />
+      <img
+        src="img/icon/right-line.svg"
+        class="h-1.5 md:h-4"
+        alt="Right Line"
+      />
     </div>
 
     <h1 class="md:text-6xl 2xl:text-8xl p-3 2xl:py-6 font-italian text-4xl">
@@ -30,7 +34,7 @@
   <iframe
     src="https://www.youtube.com/embed/ZynMjLPYSVY"
     frameborder="0"
-    class="h-128 2xl:h-142 w-full"
+    class="h-60 md:h-128 2xl:h-142 w-full"
   ></iframe>
 </template>
 

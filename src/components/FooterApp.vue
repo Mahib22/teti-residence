@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-gray-200 font-inter">
-    <div class="w-full p-4 2xl:px-8 py-6 lg:py-8">
+    <div class="w-full p-4 pb-28 md:pb-0 2xl:px-8 py-6 lg:py-8">
       <div class="md:flex md:justify-between items-center 2xl:text-3xl">
         <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
           <a href="#" class="text-gray-500 hover:text-gray-900"
