@@ -1,11 +1,7 @@
-<script setup>
-import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
-</script>
-
 <template>
   <div class="border-b-2 border-gray-200 font-inter">
     <div
-      class="container mx-auto py-3 2xl:py-5 flex justify-between flex-wrap flex-col items-center md:flex-row md:px-2"
+      class="py-3 2xl:py-5 flex justify-between flex-wrap flex-col items-center md:flex-row md:px-8"
     >
       <div class="flex items-center">
         <div class="flex items-center">
@@ -80,36 +76,110 @@ import { Navbar, NavbarCollapse, NavbarLink } from "flowbite-vue";
     </div>
   </div>
 
-  <Navbar class="sticky z-20 top-0 left-0 font-inter 2xl:h-32">
-    <template #logo>
+  <nav
+    class="px-4 md:px-8 py-4 md:flex md:justify-between md:items-center sticky z-20 top-0 left-0 font-inter 2xl:h-32 bg-white"
+  >
+    <div class="flex items-center justify-between">
       <router-link to="/">
         <img src="img/logo.png" class="h-20 2xl:h-28" alt="Company Logo" />
       </router-link>
-    </template>
-    <template #default="{ isShowMenu }">
-      <NavbarCollapse :isShowMenu="isShowMenu">
-        <NavbarLink link="#" class="2xl:text-3xl" is-active>Home</NavbarLink>
-        <NavbarLink link="#" class="2xl:text-3xl">Accomodations</NavbarLink>
-        <NavbarLink link="#" class="2xl:text-3xl">Gallery</NavbarLink>
-        <NavbarLink link="#" class="2xl:text-3xl">News</NavbarLink>
-        <NavbarLink link="#" class="2xl:text-3xl">Contact</NavbarLink>
-        <NavbarLink link="#" class="lg:hidden">Book Now</NavbarLink>
-      </NavbarCollapse>
-    </template>
-    <template #right-side>
+
+      <div @click="showMenu = !showMenu" class="flex md:hidden">
+        <button type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+            :class="showMenu ? 'hidden' : 'flex'"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+            :class="showMenu ? 'flex' : 'hidden'"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <ul
+      :class="showMenu ? 'flex' : 'hidden'"
+      class="flex-col mt-4 p-4 md:p-0 md:flex md:flex-row md:items-center md:space-x-8 2xl:space-x-16 md:mt-0 border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-white"
+    >
+      <li
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+      >
+        <router-link to="#">Home</router-link>
+      </li>
+      <li
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+      >
+        <router-link to="#">Accomodations</router-link>
+      </li>
+      <li
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+      >
+        <router-link to="#">Gallery</router-link>
+      </li>
+      <li
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+      >
+        <router-link to="#">News</router-link>
+      </li>
+      <li
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+      >
+        <router-link to="#">Contact</router-link>
+      </li>
+    </ul>
+
+    <router-link
+      to="#"
+      class="relative btn-hover hidden lg:block text-green-500 border hover:text-white border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0 2xl:text-3xl"
+    >
+      Book Now
+    </router-link>
+  </nav>
+
+  <div
+    class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white border-gray-200 md:hidden"
+  >
+    <div class="w-full h-full flex p-3">
       <router-link
         to="#"
-        class="relative btn-hover hidden lg:block text-green-500 border hover:text-white border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0 2xl:text-3xl"
+        class="bg-lime text-white w-full h-full flex items-center justify-center font-inter"
+        >Book Now</router-link
       >
-        Book Now
-      </router-link>
-    </template>
-  </Navbar>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "NavbarApp",
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
 };
 </script>
 

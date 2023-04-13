@@ -14,6 +14,10 @@ module.exports = {
         italian: ["Italiana", "serif"],
       },
 
+      colors: {
+        lime: "#64A100",
+      },
+
       animation: {
         "spin-slow": "spin 5s linear infinite",
       },
