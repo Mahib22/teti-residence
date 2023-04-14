@@ -80,7 +80,7 @@
     class="px-4 md:px-8 py-4 md:flex md:justify-between md:items-center sticky z-20 top-0 left-0 font-inter 2xl:h-32 bg-white"
   >
     <div class="flex items-center justify-between">
-      <router-link to="/">
+      <router-link active-class to="/">
         <img
           src="img/logo.png"
           class="h-12 md:h-20 2xl:h-28"
@@ -129,33 +129,34 @@
       class="flex-col mt-4 p-4 md:p-0 md:flex md:flex-row md:items-center md:space-x-8 2xl:space-x-16 md:mt-0 border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-white"
     >
       <li
-        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
         <router-link to="#">Home</router-link>
       </li>
       <li
-        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link to="#">Accomodations</router-link>
+        <router-link active-class to="#">Accomodations</router-link>
       </li>
       <li
-        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link to="#">Gallery</router-link>
+        <router-link active-class to="#">Gallery</router-link>
       </li>
       <li
-        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link to="#">News</router-link>
+        <router-link active-class to="#">News</router-link>
       </li>
       <li
-        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 2xl:text-3xl"
+        class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link to="#">Contact</router-link>
+        <router-link active-class to="#">Contact</router-link>
       </li>
     </ul>
 
     <router-link
+      active-class
       to="#"
       class="relative btn-hover hidden lg:block text-green-500 border hover:text-white border-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 px-5 py-2.5 text-center mr-3 md:mr-0 2xl:text-3xl"
     >
@@ -168,6 +169,7 @@
   >
     <div class="w-full h-full flex p-3">
       <router-link
+        active-class
         to="#"
         class="bg-lime text-white w-full h-full flex items-center justify-center font-inter"
         >Book Now</router-link
