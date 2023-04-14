@@ -1,5 +1,5 @@
 <template>
-  <Carousel>
+  <Carousel :mouse-drag="false">
     <Slide v-for="n in 5" :key="n">
       <img
         src="img/hero.png"

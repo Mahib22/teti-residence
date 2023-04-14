@@ -80,7 +80,7 @@
     class="px-4 md:px-8 py-4 md:flex md:justify-between md:items-center sticky z-20 top-0 left-0 font-inter 2xl:h-32 bg-white"
   >
     <div class="flex items-center justify-between">
-      <router-link active-class to="/">
+      <router-link active-class :to="{ name: 'Home' }">
         <img
           src="img/logo.png"
           class="h-12 md:h-20 2xl:h-28"
@@ -131,27 +131,27 @@
       <li
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link to="#">Home</router-link>
+        <router-link :to="{ name: 'Home' }">Home</router-link>
       </li>
       <li
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link active-class to="#">Accomodations</router-link>
+        <router-link :to="{ name: 'Accomodations' }">Accomodations</router-link>
       </li>
       <li
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link active-class to="#">Gallery</router-link>
+        <router-link :to="{ name: 'Gallery' }">Gallery</router-link>
       </li>
       <li
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link active-class to="#">News</router-link>
+        <router-link :to="{ name: 'News' }">News</router-link>
       </li>
       <li
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link active-class to="#">Contact</router-link>
+        <router-link :to="{ name: 'Contact' }">Contact</router-link>
       </li>
     </ul>
 
