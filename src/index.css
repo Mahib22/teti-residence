@@ -4,3 +4,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel__prev,
+.carousel__next,
+.carousel__prev:hover,
+.carousel__next:hover {
+  border-width: 0;
+  color: #fff;
+}
+
+.carousel__next {
+  right: 20px !important;
+}
+
+.carousel__prev {
+  left: 20px !important;
+}
+
+.carousel__next--disabled,
+.carousel__prev--disabled {
+  display: none !important;
+}
+
+.carousel__slide {
+  padding: 0;
+}
+
+.progress {
+  animation: load 4s infinite;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+details summary::after {
+  content: url("../public/img/icon/arrow-down-right.svg");
+}
+
+details[open] > summary::after {
+  content: url("../public/img/icon/arrow-right.svg");
+}
