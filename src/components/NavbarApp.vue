@@ -163,19 +163,6 @@
       Book Now
     </router-link>
   </nav>
-
-  <div
-    class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white border-gray-200 md:hidden"
-  >
-    <div class="w-full h-full flex p-3">
-      <router-link
-        active-class
-        to="#"
-        class="bg-lime text-white w-full h-full flex items-center justify-center font-inter"
-        >Book Now</router-link
-      >
-    </div>
-  </div>
 </template>
 
 <script>

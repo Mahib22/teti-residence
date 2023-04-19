@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-gray-200 font-inter">
-    <div class="w-full p-4 pb-28 md:pb-0 2xl:px-8 py-6 lg:py-8">
+    <div class="w-full p-4 2xl:px-8 py-8" :class="showBtn ? 'pb-28' : ''">
       <div
         class="flex flex-col md:flex-row md:justify-between items-center 2xl:text-3xl"
       >
@@ -84,10 +84,71 @@
       </div>
     </div>
   </footer>
+
+  <!-- BOTTOM NAV MOBILE -->
+  <div
+    class="fixed z-10 w-full md:hidden"
+    :class="showBtn ? 'bottom-12 h-20' : 'bottom-0'"
+  >
+    <div class="flex justify-end mr-4">
+      <div class="bg-gray-300 opacity-90 rounded-t-xl w-14 h-12 flex">
+        <button class="flex mx-auto items-center" @click="showBtn = !showBtn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3.5"
+            stroke="white"
+            class="w-6 h-6"
+            :class="showBtn ? 'flex' : 'hidden'"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3.5"
+            stroke="white"
+            class="w-6 h-6"
+            :class="showBtn ? 'hidden' : 'flex'"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 15.75l7.5-7.5 7.5 7.5"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-full p-3 bg-white"
+      :class="showBtn ? 'flex' : 'hidden'"
+    >
+      <router-link
+        active-class
+        to="#"
+        class="bg-lime text-white w-full h-full flex items-center justify-center font-inter"
+        >Book Now</router-link
+      >
+    </div>
+  </div>
+  <!-- END OF BOTTOM NAV MOBILE -->
 </template>
 
 <script>
 export default {
   name: "FooterApp",
+  data() {
+    return {
+      showBtn: true,
+    };
+  },
 };
 </script>
