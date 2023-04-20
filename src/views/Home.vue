@@ -120,9 +120,12 @@ import { Rating } from "flowbite-vue";
   </section>
 
   <iframe
-    src="https://www.youtube.com/embed/ZynMjLPYSVY"
-    frameborder="0"
     class="h-60 md:h-128 2xl:h-142 w-full"
+    src="https://www.youtube.com/embed/ZynMjLPYSVY"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
   ></iframe>
 
   <section

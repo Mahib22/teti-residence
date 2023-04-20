@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b-2 border-gray-200 font-inter">
+  <div class="border-b border-gray-200 font-inter">
     <div
       class="py-3 2xl:py-5 flex justify-between flex-wrap flex-col items-center md:flex-row md:px-8"
     >
@@ -77,7 +77,7 @@
   </div>
 
   <nav
-    class="px-4 md:px-8 py-4 md:flex md:justify-between md:items-center sticky z-20 top-0 left-0 font-inter 2xl:h-32 bg-white"
+    class="px-4 md:px-8 py-4 md:flex md:justify-between md:items-center sticky z-20 top-0 left-0 font-inter 2xl:h-32 bg-white border-b border-gray-200"
   >
     <div class="flex items-center justify-between">
       <router-link active-class :to="{ name: 'Home' }">

@@ -1,6 +1,9 @@
 <template>
   <footer class="bg-gray-200 font-inter">
-    <div class="w-full p-4 2xl:px-8 py-8" :class="showBtn ? 'pb-28' : ''">
+    <div
+      class="w-full p-4 2xl:px-8 py-8"
+      :class="showBtn ? 'pb-28 md:pb-8' : ''"
+    >
       <div
         class="flex flex-col md:flex-row md:justify-between items-center 2xl:text-3xl"
       >
