@@ -7,7 +7,7 @@
       <div
         class="flex flex-col md:flex-row md:justify-between items-center 2xl:text-3xl"
       >
-        <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
+        <div class="flex mt-4 space-x-6 2xl:space-x-12 justify-center sm:mt-0">
           <a href="#" class="text-gray-500 hover:text-gray-900"
             >Accomodations</a
           >
@@ -23,7 +23,7 @@
           />
         </div>
 
-        <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
+        <div class="flex mt-4 space-x-6 2xl:space-x-12 justify-center sm:mt-0">
           <a href="#" class="text-gray-500 hover:text-gray-900">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,10 +71,10 @@
         </div>
       </div>
 
-      <hr class="my-6 border-gray-400 sm:mx-auto lg:my-8" />
+      <hr class="my-6 border border-gray-300 sm:mx-auto lg:my-8" />
 
       <div class="sm:flex sm:items-center sm:justify-between">
-        <p class="text-sm 2xl:text-3xl text-gray-500 mb-4 md:mb-0">
+        <p class="text-sm 2xl:text-3xl text-gray-500 mb-4 md:mb-0 text-center">
           © 2023 The Teti Residence | All Rights Reserved.
         </p>
         <p class="text-sm 2xl:text-3xl text-gray-500">

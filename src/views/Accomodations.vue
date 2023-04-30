@@ -35,7 +35,7 @@
     </div>
 
     <div
-      class="lg:w-3/4 lg:p-12 2xl:p-24 px-4 py-8 border-t lg:border-l border-gray-200 card-scroll-bar overflow-x-auto flex"
+      class="lg:w-3/4 lg:p-12 2xl:p-24 px-4 py-8 border-t lg:border-l border-gray-200 card-scroll-bar overflow-x-auto flex min-w-full md:min-w-0"
     >
       <div
         class="flex flex-nowrap space-x-4 lg:space-x-0 lg:grid lg:gap-x-4 2xl:gap-x-10 lg:gap-y-4 2xl:gap-y-10 lg:grid-cols-3"
