@@ -1,11 +1,11 @@
 <template>
-  <section class="px-2 lg:px-5 py-8 flex sm:flex-nowrap flex-wrap">
+  <section
+    class="px-2 lg:px-5 py-8 2xl:py-20 2xl:px-12 flex sm:flex-nowrap flex-wrap min-h-screen"
+  >
     <div class="lg:w-1/2 w-full px-2 lg:px-4 flex">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.885884869404!2d106.82384637423208!3d-6.1460260602456325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5e4fd62c7b9%3A0x88a9612a1c370c32!2sJl.%20Mangga%20Besar%20XIII%20No.1%2C%20RT.3%2FRW.1%2C%20Kota%20Tua%2C%20Mangga%20Dua%20Sel.%2C%20Kecamatan%20Sawah%20Besar%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011170!5e0!3m2!1sid!2sid!4v1681991299680!5m2!1sid!2sid"
-        width="100%"
-        height="100%"
-        style="border: 0"
+        class="w-full"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
@@ -15,16 +15,16 @@
     <div
       class="lg:w-1/2 flex flex-col ml-2 lg:ml-8 space-y-4 lg:space-y-8 pt-4 lg:pt-0"
     >
-      <div class="space-y-2">
-        <h1 class="font-inter font-semibold text-lg 2xl:text-2xl">
+      <div class="space-y-2 2xl:space-y-4">
+        <h1 class="font-inter font-semibold text-lg 2xl:text-3xl">
           Phone Number
         </h1>
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center space-x-2 2xl:space-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="#006EB5"
-            class="w-4 h-4 2xl:w-6 2xl:h-6"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
           >
             <path
               fill-rule="evenodd"
@@ -32,19 +32,19 @@
               clip-rule="evenodd"
             />
           </svg>
-          <p class="font-inter text-sm 2xl:text-xl">+6281315013050</p>
+          <p class="font-inter text-sm 2xl:text-2xl">+6281315013050</p>
         </div>
       </div>
-      <div class="space-y-2">
-        <h1 class="font-inter font-semibold text-lg 2xl:text-2xl">
+      <div class="space-y-2 2xl:space-y-4">
+        <h1 class="font-inter font-semibold text-lg 2xl:text-3xl">
           Email Address
         </h1>
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center space-x-2 2xl:space-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="#006EB5"
-            class="w-4 h-4 2xl:w-6 2xl:h-6"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
           >
             <path
               d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
@@ -53,15 +53,15 @@
               d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
             />
           </svg>
-          <p class="font-inter text-sm 2xl:text-xl">tetikost@gmail.com</p>
+          <p class="font-inter text-sm 2xl:text-2xl">tetikost@gmail.com</p>
         </div>
       </div>
-      <div class="space-y-2">
-        <h1 class="font-inter font-semibold text-lg 2xl:text-2xl">
+      <div class="space-y-2 2xl:space-y-4">
+        <h1 class="font-inter font-semibold text-lg 2xl:text-3xl">
           Location Address
         </h1>
-        <div class="flex items-start space-x-2">
-          <div class="w-16 h-16 lg:w-8 lg:h-8 mt-1">
+        <div class="flex items-start space-x-2 2xl:space-x-4">
+          <div class="w-16 h-16 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 mt-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -75,7 +75,9 @@
             </svg>
           </div>
           <div>
-            <p class="font-inter text-sm 2xl:text-xl pr-2 lg:pr-12 leading-6">
+            <p
+              class="font-inter text-sm 2xl:text-2xl pr-2 lg:pr-12 2xl:pr-40 leading-6"
+            >
               Jl. Mangga Besar XIII No.1, RT.1/RW.3, Mangga Dua Sel., Kecamatan
               Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta
               10730
