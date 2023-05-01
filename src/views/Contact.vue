@@ -13,7 +13,7 @@
     </div>
 
     <div
-      class="lg:w-1/2 flex flex-col ml-2 lg:ml-8 space-y-4 lg:space-y-8 pt-4 lg:pt-0"
+      class="lg:w-1/2 flex flex-col ml-2 lg:ml-8 space-y-4 lg:space-y-8 2xl:space-y-16 pt-4 lg:pt-0"
     >
       <div class="space-y-2 2xl:space-y-4">
         <h1 class="font-inter font-semibold text-lg 2xl:text-3xl">
@@ -61,7 +61,7 @@
           Location Address
         </h1>
         <div class="flex items-start space-x-2 2xl:space-x-4">
-          <div class="w-16 h-16 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 mt-1">
+          <div class="w-16 h-16 lg:w-8 lg:h-8 2xl:w-14 2xl:h-14 mt-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
