@@ -4,9 +4,9 @@
   >
     <div class="lg:w-1/2 w-full px-2 lg:px-4 flex">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.885884869404!2d106.82384637423208!3d-6.1460260602456325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5e4fd62c7b9%3A0x88a9612a1c370c32!2sJl.%20Mangga%20Besar%20XIII%20No.1%2C%20RT.3%2FRW.1%2C%20Kota%20Tua%2C%20Mangga%20Dua%20Sel.%2C%20Kecamatan%20Sawah%20Besar%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011170!5e0!3m2!1sid!2sid!4v1681991299680!5m2!1sid!2sid"
-        class="w-full"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.887870669022!2d106.82531612477214!3d-6.145759696119618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5e4d9da78a5%3A0x8b869ce99bfbe7cb!2sTeti%20Kost!5e0!3m2!1sid!2sid!4v1683036691245!5m2!1sid!2sid"
         allowfullscreen=""
+        class="w-full"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
