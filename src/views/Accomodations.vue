@@ -25,7 +25,7 @@
         <p
           v-for="(filter, index) in filters"
           :key="index"
-          @click="filterTodo(filter)"
+          @click="filterRoom(filter)"
           class="text-gray-400 hover:text-gray-900 cursor-pointer"
           :class="[filter === activeFilter ? 'text-gray-900' : '']"
         >
@@ -42,7 +42,7 @@
       >
         <div
           class="border border-gray-200 p-3 2xl:p-6 w-64 lg:w-full"
-          v-for="(todo, index) in getTodos"
+          v-for="(room, index) in getRooms"
           :key="index"
         >
           <div class="inline-block">
@@ -51,7 +51,7 @@
             <h5
               class="my-2 2xl:my-6 text-lg 2xl:text-4xl font-medium tracking-tight text-gray-900"
             >
-              {{ todo.name }}
+              {{ room.name }}
             </h5>
 
             <div class="pb-2">
@@ -112,7 +112,7 @@
             >
               Starting from
               <span class="font-semibold text-gray-900 ml-1"
-                >Rp. {{ todo.price }} / Night</span
+                >Rp. {{ room.price }} / Night</span
               >
             </p>
 
@@ -120,9 +120,8 @@
               <a
                 href="#"
                 class="relative w-full flex btn-hover items-center justify-center text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime py-3 2xl:py-6 2xl:text-2xl"
+                >Book Now</a
               >
-                Book Now
-              </a>
             </div>
           </div>
         </div>
@@ -139,26 +138,32 @@ export default {
 
   setup() {
     const filters = ref(["Standard Room", "Superior Room", "Deluxe Room"]);
-    const todos = ref([
-      { name: "Studio 01", price: "170.000", type: "Deluxe Room" },
-      { name: "Studio 02", price: "130.000", type: "Superior Room" },
-      { name: "Studio 03", price: "120.000", type: "Standard Room" },
+    const rooms = ref([
+      { name: "Studio 01", price: "1.800.000", type: "Deluxe Room" },
+      { name: "Studio 01+", price: "1.900.000", type: "Deluxe Room" },
+      { name: "Studio 01++", price: "2.000.000", type: "Deluxe Room" },
+      { name: "Studio 01+++", price: "2.200.000", type: "Deluxe Room" },
+      { name: "Studio 02", price: "1.700.000", type: "Superior Room" },
+      { name: "Studio 02++", price: "2.000.000", type: "Superior Room" },
+      { name: "Studio 03", price: "1.300.000", type: "Standard Room" },
+      { name: "Studio 03+", price: "1.400.000", type: "Standard Room" },
+      { name: "Studio 03++", price: "1.500.000", type: "Standard Room" },
     ]);
     const activeFilter = ref("Standard Room");
 
-    function filterTodo(type) {
+    function filterRoom(type) {
       activeFilter.value = type;
     }
 
-    const getTodos = computed(() => {
-      return todos.value.filter((item) => item.type === activeFilter.value);
+    const getRooms = computed(() => {
+      return rooms.value.filter((item) => item.type === activeFilter.value);
     });
 
     return {
       filters,
       activeFilter,
-      filterTodo,
-      getTodos,
+      filterRoom,
+      getRooms,
     };
   },
 };
