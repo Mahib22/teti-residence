@@ -4,6 +4,7 @@ import Accomodations from "../views/Accomodations.vue";
 import Gallery from "../views/Gallery.vue";
 import News from "../views/News.vue";
 import Contact from "../views/Contact.vue";
+import RoomDetail from "../views/RoomDetail.vue";
 
 const routes = [
   {
@@ -30,6 +31,12 @@ const routes = [
     path: "/contact",
     name: "Contact",
     component: Contact,
+  },
+  {
+    path: "/room/:id",
+    name: "RoomDetail",
+    component: RoomDetail,
+    props: true,
   },
 ];
 
