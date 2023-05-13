@@ -110,7 +110,7 @@
             <p
               class="font-medium text-gray-400 text-sm 2xl:text-2xl py-3 2xl:py-6"
             >
-              Starting from
+              Start from
               <span class="font-semibold text-gray-900 ml-1"
                 >Rp {{ room.price }},- / {{ room.status }}</span
               >
@@ -121,7 +121,7 @@
                 @click="showDetail(room.id)"
                 class="relative w-full flex btn-hover items-center justify-center text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime py-3 2xl:py-6 2xl:text-2xl"
               >
-                Book Now
+                Read More
               </button>
             </div>
           </div>
@@ -133,6 +133,7 @@
 
 <script>
 import { ref, computed } from "vue";
+import data from "../data/room.json";
 
 export default {
   name: "Accomodations",
@@ -145,161 +146,7 @@ export default {
 
   setup() {
     const filters = ref(["Standard Room", "Superior Room", "Deluxe Room"]);
-    const rooms = ref([
-      {
-        id: 1,
-        studioType: "Standard Room",
-        name: "Studio 3",
-        price: "120.000",
-        wide: "2,5 x 3",
-        tv: true,
-        laundry: false,
-        floor: 4,
-        status: "Night",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 2,
-        studioType: "Superior Room",
-        name: "Studio 2",
-        price: "130.000",
-        wide: "3 x 4",
-        tv: true,
-        laundry: false,
-        floor: 3,
-        status: "Night",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 3,
-        studioType: "Deluxe Room",
-        name: "Studio 1",
-        price: "170.000",
-        wide: "3,5 x 5",
-        tv: true,
-        laundry: false,
-        floor: 3,
-        status: "Night",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 4,
-        studioType: "Standard Room",
-        name: "Studio 3",
-        price: "1.300.000",
-        wide: "2,5 x 3",
-        tv: false,
-        laundry: false,
-        floor: 4,
-        status: "Month",
-        image: [
-          "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-          "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348",
-        ],
-      },
-      {
-        id: 5,
-        studioType: "Standard Room",
-        name: "Studio 3+",
-        price: "1.400.000",
-        wide: "2,5 x 3",
-        tv: true,
-        laundry: false,
-        floor: 3,
-        status: "Month",
-        image: [
-          "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-          "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348",
-        ],
-      },
-      {
-        id: 6,
-        studioType: "Standard Room",
-        name: "Studio 3++",
-        price: "1.500.000",
-        wide: "2,5 x 3",
-        tv: true,
-        laundry: true,
-        floor: 2,
-        status: "Month",
-        image: [
-          "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-          "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348",
-        ],
-      },
-      {
-        id: 7,
-        studioType: "Superior Room",
-        name: "Studio 2",
-        price: "1.700.000",
-        wide: "3 x 4",
-        tv: true,
-        laundry: false,
-        floor: 3,
-        status: "Month",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 8,
-        studioType: "Superior Room",
-        name: "Studio 2++",
-        price: "2.000.000",
-        wide: "3 x 4",
-        tv: true,
-        laundry: true,
-        floor: 1,
-        status: "Month",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 9,
-        studioType: "Deluxe Room",
-        name: "Studio 1",
-        price: "1.800.000",
-        wide: "3,5 x 5",
-        tv: true,
-        laundry: false,
-        floor: 3,
-        status: "Month",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 10,
-        studioType: "Deluxe Room",
-        name: "Studio 1+",
-        price: "2.000.000",
-        wide: "3,5 x 5",
-        tv: true,
-        laundry: true,
-        floor: 3,
-        status: "Month",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 11,
-        studioType: "Deluxe Room",
-        name: "Studio 1++",
-        price: "2.000.000",
-        wide: "3,5 x 5",
-        tv: true,
-        laundry: false,
-        floor: 2,
-        status: "Month",
-        image: ["https://dummyimage.com/720x400"],
-      },
-      {
-        id: 12,
-        studioType: "Deluxe Room",
-        name: "Studio 1+++",
-        price: "2.200.000",
-        wide: "3,5 x 5",
-        tv: true,
-        laundry: true,
-        floor: 2,
-        status: "Month",
-        image: ["https://dummyimage.com/720x400"],
-      },
-    ]);
+    const rooms = ref(data);
     const activeFilter = ref("Standard Room");
 
     function filterRoom(studioType) {

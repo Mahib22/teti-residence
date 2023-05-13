@@ -9,7 +9,10 @@
     "laundry": false,
     "floor": 4,
     "status": "Night",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348"
+    ]
   },
   {
     "id": 2,

@@ -1,120 +1,138 @@
 <template>
-  <section
-    class="px-2 lg:px-5 py-8 2xl:py-20 2xl:px-12 flex sm:flex-nowrap flex-wrap min-h-screen"
-  >
-    <div class="lg:w-3/5">
-      <img :src="image" alt="img-card" />
-    </div>
+  <section class="w-full lg:w-3/4 mx-auto min-h-screen p-4">
+    <Carousel :autoplay="5000" :wrap-around="true">
+      <Slide v-for="item in image" :key="item">
+        <img
+          :src="item"
+          alt="img-slide"
+          class="h-40 lg:h-80 w-full object-cover"
+        />
+      </Slide>
+    </Carousel>
 
-    <div
-      class="flex flex-col ml-2 lg:ml-8 pt-4 lg:pt-0 font-inter lg:w-2/5 w-full"
-    >
-      <h2 class="text-gray-500 2xl:text-2xl tracking-widest pb-2 2xl:pb-4">
-        {{ studioType }}
-      </h2>
-      <h1
-        class="text-gray-900 text-3xl 2xl:text-6xl font-semibold uppercase pb-4 2xl:pb-8"
-      >
-        {{ name }}
-      </h1>
-      <h3 class="text-gray-900 text-lg 2xl:text-3xl font-light pb-2 2xl:pb-4">
-        Rp {{ price }},- / {{ status }}
-      </h3>
+    <div class="py-4 lg:py-8 font-inter">
+      <div class="lg:flex justify-between items-center">
+        <div>
+          <h2 class="text-gray-500 2xl:text-2xl tracking-widest pb-2">
+            {{ studioType }}
+          </h2>
+          <h1
+            class="text-gray-900 text-3xl 2xl:text-6xl font-semibold uppercase pb-2"
+          >
+            {{ name }}
+          </h1>
+        </div>
+        <div>
+          <h3 class="text-gray-900 text-xl 2xl:text-3xl font-light">
+            Rp {{ price }},- / {{ status }}
+          </h3>
+        </div>
+      </div>
 
-      <div class="flex space-x-4 pb-4 2xl:pb-8 2xl:text-2xl">
-        <p>
+      <div class="py-4">
+        <h2 class="font-semibold tracking-wider text-xl py-2">Info Kamar</h2>
+        <p class="2xl:text-2xl pb-1">
           <span class="text-gray-500">Luas : </span>
           <span class="font-medium">{{ wide }} m</span>
         </p>
-        <p>
+        <p class="2xl:text-2xl">
           <span class="text-gray-500">Lantai : </span>
           <span class="font-medium">{{ floor }}</span>
         </p>
       </div>
 
-      <div class="pb-4 2xl:pb-12">
-        <p class="text-gray-500 2xl:text-2xl pb-2 2xl:pb-4">Fasilitas :</p>
-        <div class="flex flex-wrap mb-2 2xl:mb-4 space-x-4 2xl:space-x-8">
-          <div class="flex space-x-2 items-center">
+      <div class="py-4">
+        <h2 class="font-semibold tracking-wider text-xl py-2">
+          Fasilitas Kamar
+        </h2>
+        <div class="py-1">
+          <div class="flex space-x-2 items-center pb-2">
             <img
               src="../../public/img/icon/cool-to-dry.svg"
               class="h-5 2xl:h-10"
               alt="icon"
             />
-            <p class="2xl:text-2xl text-gray-900 font-medium">
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
               Air Conditioner
             </p>
           </div>
-          <div class="flex space-x-2 items-center">
+          <div class="flex space-x-2 items-center pb-2">
             <img
               src="../../public/img/icon/wifi.svg"
               class="h-5 2xl:h-10"
               alt="icon"
             />
-            <p class="2xl:text-2xl text-gray-900 font-medium">Wi-Fi</p>
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Wi-Fi</p>
           </div>
-        </div>
-
-        <div class="flex flex-wrap mb-2 2xl:mb-4 space-x-4 2xl:space-x-8">
-          <div class="flex space-x-2 items-center">
+          <div class="flex space-x-2 items-center pb-2">
             <img
               src="../../public/img/icon/wardrobe.svg"
               class="h-5 2xl:h-10"
               alt="icon"
             />
-            <p class="2xl:text-2xl text-gray-900 font-medium">Wardrobe</p>
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Wardrobe</p>
           </div>
-          <div class="flex space-x-2 items-center">
+          <div class="flex space-x-2 items-center pb-2">
             <img
               src="../../public/img/icon/water-flash.svg"
               class="h-5 2xl:h-10"
               alt="icon"
             />
-            <p class="2xl:text-2xl text-gray-900 font-medium">Hot Water</p>
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Hot Water</p>
           </div>
-        </div>
-
-        <div class="flex flex-wrap mb-2 2xl:mb-4 space-x-4 2xl:space-x-8">
-          <div class="flex space-x-2 items-center">
+          <div class="flex space-x-2 items-center pb-2">
             <img
               src="../../public/img/icon/door-closed.svg"
               class="h-5 2xl:h-10"
               alt="icon"
             />
-            <p class="2xl:text-2xl text-gray-900 font-medium">
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
               Bathroom Inside
             </p>
           </div>
-          <div class="flex space-x-2 items-center" v-if="tv">
+          <div class="flex space-x-2 items-center pb-2" v-if="tv">
             <img
               src="../../public/img/icon/tv.svg"
               class="h-5 2xl:h-10"
               alt="icon"
             />
-            <p class="2xl:text-2xl text-gray-900 font-medium">TV</p>
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">TV</p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2" v-if="laundry">
+            <img
+              src="../../public/img/icon/laundry.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Laundry 2 pasang / hari
+            </p>
           </div>
         </div>
-
-        <p class="2xl:text-2xl" v-if="laundry">
-          <span class="text-gray-500">Laundry : </span>
-          <span class="text-gray-900 font-medium">2 pasang / hari</span>
-        </p>
       </div>
 
-      <button
-        class="relative btn-hover w-full lg:w-1/2 text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime py-3 2xl:py-6 2xl:text-2xl"
-      >
-        Book Now
-      </button>
+      <div class="lg:flex justify-end">
+        <button
+          class="relative btn-hover w-full lg:w-1/4 text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime py-3 2xl:py-6 2xl:text-2xl"
+        >
+          Book Now
+        </button>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import data from "../data/room.json";
+import { Carousel, Slide } from "vue3-carousel";
 
 export default {
   name: "RoomDetail",
+
+  components: {
+    Carousel,
+    Slide,
+  },
 
   data() {
     return {
@@ -126,7 +144,7 @@ export default {
       laundry: false,
       floor: 0,
       status: "",
-      image: "",
+      image: [],
     };
   },
 
@@ -142,7 +160,7 @@ export default {
     this.laundry = room.laundry;
     this.floor = room.floor;
     this.status = room.status;
-    this.image = room.image[0];
+    this.image = room.image;
   },
 };
 </script>
