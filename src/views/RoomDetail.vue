@@ -1,16 +1,16 @@
 <template>
-  <section class="w-full lg:w-3/4 mx-auto min-h-screen p-4">
+  <section class="w-full lg:w-3/4 mx-auto min-h-screen p-4 2xl:p-8">
     <Carousel :autoplay="5000" :wrap-around="true">
       <Slide v-for="item in image" :key="item">
         <img
           :src="item"
           alt="img-slide"
-          class="h-40 lg:h-80 w-full object-cover"
+          class="h-40 lg:h-80 2xl:h-128 w-full object-cover"
         />
       </Slide>
     </Carousel>
 
-    <div class="py-4 lg:py-8 font-inter">
+    <div class="py-4 lg:py-8 2xl:py-12 font-inter">
       <div class="lg:flex justify-between items-center">
         <div>
           <h2 class="text-gray-500 2xl:text-2xl tracking-widest pb-2">
@@ -23,29 +23,81 @@
           </h1>
         </div>
         <div>
-          <h3 class="text-gray-900 text-xl 2xl:text-3xl font-light">
-            Rp {{ price }},- / {{ status }}
+          <h3 class="text-gray-900 text-xl 2xl:text-4xl font-light">
+            {{ formatPrice(price) }},- / {{ status }}
           </h3>
         </div>
       </div>
 
-      <div class="py-4">
-        <h2 class="font-semibold tracking-wider text-xl py-2">Info Kamar</h2>
-        <p class="2xl:text-2xl pb-1">
-          <span class="text-gray-500">Luas : </span>
-          <span class="font-medium">{{ wide }} m</span>
-        </p>
-        <p class="2xl:text-2xl">
-          <span class="text-gray-500">Lantai : </span>
-          <span class="font-medium">{{ floor }}</span>
-        </p>
+      <div class="py-4 2xl:py-8 lg:grid grid-cols-3">
+        <div class="py-2">
+          <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
+            Info Kamar
+          </h2>
+          <p class="2xl:text-2xl pb-2">
+            <span class="text-gray-500">Luas : </span>
+            <span class="font-medium">{{ wide }} m</span>
+          </p>
+          <p class="2xl:text-2xl pb-2">
+            <span class="text-gray-500">Lantai : </span>
+            <span class="font-medium">{{ floor }}</span>
+          </p>
+        </div>
+
+        <div class="col-span-2 py-2">
+          <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
+            Peraturan Kamar
+          </h2>
+          <div class="py-1 lg:grid grid-rows-2 grid-flow-col">
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/24-hours.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Akses 24 Jam
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/bedroom.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Maks. 2 orang/kamar
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/parents.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Tidak untuk pasutri
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/baby.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Tidak boleh bawa anak
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="py-4">
-        <h2 class="font-semibold tracking-wider text-xl py-2">
+      <div class="pb-6">
+        <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
           Fasilitas Kamar
         </h2>
-        <div class="py-1">
+        <div class="py-1 lg:grid grid-rows-6 grid-flow-col gap-4">
           <div class="flex space-x-2 items-center pb-2">
             <img
               src="../../public/img/icon/cool-to-dry.svg"
@@ -88,6 +140,100 @@
             />
             <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
               Bathroom Inside
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/motorbike.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Parkir Motor
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/refrigerator.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Kulkas</p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/customer-service.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Penjaga Kos
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/bedroom.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Ruang Santai
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/dispenser.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Dispenser</p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/washing-machine.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Ruang Cuci
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/sofa.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Ruang Tamu
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/clothes-hanger.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Ruang Jemur
+            </p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/kitchen.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Dapur</p>
+          </div>
+          <div class="flex space-x-2 items-center pb-2">
+            <img
+              src="../../public/img/icon/card-access.svg"
+              class="h-5 2xl:h-10"
+              alt="icon"
+            />
+            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+              Kartu Akses
             </p>
           </div>
           <div class="flex space-x-2 items-center pb-2" v-if="tv">
@@ -134,11 +280,20 @@ export default {
     Slide,
   },
 
+  methods: {
+    formatPrice(price) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+      }).format(price);
+    },
+  },
+
   data() {
     return {
       name: "",
       studioType: "",
-      price: "",
+      price: 0,
       wide: "",
       tv: false,
       laundry: false,

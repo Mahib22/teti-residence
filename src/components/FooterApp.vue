@@ -17,7 +17,7 @@
 
         <div class="py-2 order-first md:order-none">
           <img
-            src="img/logo.png"
+            src="../../public/img/logo.png"
             class="h-20 2xl:h-28 mx-auto"
             alt="Company Logo"
           />

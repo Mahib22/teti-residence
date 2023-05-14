@@ -82,7 +82,7 @@
     <div class="flex items-center justify-between">
       <router-link active-class :to="{ name: 'Home' }">
         <img
-          src="img/logo.png"
+          src="../../public/img/logo.png"
           class="h-12 md:h-20 2xl:h-28"
           alt="Company Logo"
         />

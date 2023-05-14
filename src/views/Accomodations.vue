@@ -112,7 +112,7 @@
             >
               Start from
               <span class="font-semibold text-gray-900 ml-1"
-                >Rp {{ room.price }},- / {{ room.status }}</span
+                >{{ formatPrice(room.price) }},- / {{ room.status }}</span
               >
             </p>
 
@@ -121,7 +121,7 @@
                 @click="showDetail(room.id)"
                 class="relative w-full flex btn-hover items-center justify-center text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime py-3 2xl:py-6 2xl:text-2xl"
               >
-                Read More
+                More Details
               </button>
             </div>
           </div>
@@ -141,6 +141,13 @@ export default {
   methods: {
     showDetail(id) {
       this.$router.push({ name: "RoomDetail", params: { id: id } });
+    },
+
+    formatPrice(price) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+      }).format(price);
     },
   },
 
