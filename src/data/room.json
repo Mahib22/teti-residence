@@ -11,7 +11,7 @@
     "status": "Night",
     "image": [
       "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
     ]
   },
   {
@@ -24,7 +24,10 @@
     "laundry": false,
     "floor": 3,
     "status": "Night",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-Room-scaled.jpg?alt=media&token=87876ad6-410f-47f9-bfb0-e3ca81633073",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
+    ]
   },
   {
     "id": 3,
@@ -36,7 +39,9 @@
     "laundry": false,
     "floor": 3,
     "status": "Night",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+    ]
   },
   {
     "id": 4,
@@ -50,7 +55,7 @@
     "status": "Month",
     "image": [
       "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
     ]
   },
   {
@@ -65,7 +70,7 @@
     "status": "Month",
     "image": [
       "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
     ]
   },
   {
@@ -80,7 +85,7 @@
     "status": "Month",
     "image": [
       "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/standard-room-shower.JPG?alt=media&token=3f7c9c83-af3d-4bf3-a29c-f93a27d3b348"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
     ]
   },
   {
@@ -93,7 +98,10 @@
     "laundry": false,
     "floor": 3,
     "status": "Month",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-Room-scaled.jpg?alt=media&token=87876ad6-410f-47f9-bfb0-e3ca81633073",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
+    ]
   },
   {
     "id": 8,
@@ -105,7 +113,10 @@
     "laundry": true,
     "floor": 1,
     "status": "Month",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-Room-scaled.jpg?alt=media&token=87876ad6-410f-47f9-bfb0-e3ca81633073",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
+    ]
   },
   {
     "id": 9,
@@ -117,7 +128,9 @@
     "laundry": false,
     "floor": 3,
     "status": "Month",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+    ]
   },
   {
     "id": 10,
@@ -129,7 +142,9 @@
     "laundry": true,
     "floor": 3,
     "status": "Month",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+    ]
   },
   {
     "id": 11,
@@ -141,7 +156,9 @@
     "laundry": false,
     "floor": 2,
     "status": "Month",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+    ]
   },
   {
     "id": 12,
@@ -153,6 +170,8 @@
     "laundry": true,
     "floor": 2,
     "status": "Month",
-    "image": ["https://dummyimage.com/720x400"]
+    "image": [
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+    ]
   }
 ]
