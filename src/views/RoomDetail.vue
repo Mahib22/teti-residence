@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full lg:w-3/4 mx-auto min-h-screen p-4 2xl:p-8">
+  <section class="w-full lg:w-4/5 mx-auto min-h-screen p-4 2xl:p-8">
     <Carousel :autoplay="5000" :wrap-around="true">
       <Slide v-for="item in image" :key="item">
         <img
@@ -8,6 +8,10 @@
           class="h-40 lg:h-80 2xl:h-128 w-full object-cover"
         />
       </Slide>
+
+      <template #addons>
+        <Navigation />
+      </template>
     </Carousel>
 
     <div class="py-4 lg:py-8 2xl:py-12 font-inter">
@@ -29,7 +33,7 @@
         </div>
       </div>
 
-      <div class="py-4 2xl:py-8 lg:grid grid-cols-3">
+      <div class="pt-4 2xl:py-8 lg:grid grid-cols-3">
         <div class="py-2">
           <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
             Info Kamar
@@ -93,166 +97,182 @@
         </div>
       </div>
 
-      <div class="pb-6">
-        <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
-          Fasilitas Kamar
-        </h2>
-        <div class="py-1 lg:grid grid-rows-6 grid-flow-col gap-4">
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/cool-to-dry.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Air Conditioner
-            </p>
+      <div class="pb-4 2xl:py-8 lg:grid grid-cols-3">
+        <div class="py-2">
+          <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
+            Fasilitas Kamar
+          </h2>
+          <div class="py-1">
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/cool-to-dry.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Air Conditioner
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/wifi.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Wi-Fi</p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/wardrobe.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Wardrobe
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/water-flash.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Hot Water
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/door-closed.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Bathroom Inside
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2" v-if="tv">
+              <img
+                src="../../public/img/icon/tv.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">TV</p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2" v-if="laundry">
+              <img
+                src="../../public/img/icon/laundry.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Laundry 2 pasang / hari
+              </p>
+            </div>
           </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/wifi.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Wi-Fi</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/wardrobe.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Wardrobe</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/water-flash.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Hot Water</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/door-closed.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Bathroom Inside
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/motorbike.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Parkir Motor
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/refrigerator.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Kulkas</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/customer-service.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Penjaga Kos
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/bedroom.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Ruang Santai
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/dispenser.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Dispenser</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/washing-machine.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Ruang Cuci
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/sofa.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Ruang Tamu
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/clothes-hanger.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Ruang Jemur
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/kitchen.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Dapur</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2">
-            <img
-              src="../../public/img/icon/card-access.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Kartu Akses
-            </p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2" v-if="tv">
-            <img
-              src="../../public/img/icon/tv.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">TV</p>
-          </div>
-          <div class="flex space-x-2 items-center pb-2" v-if="laundry">
-            <img
-              src="../../public/img/icon/laundry.svg"
-              class="h-5 2xl:h-10"
-              alt="icon"
-            />
-            <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
-              Laundry 2 pasang / hari
-            </p>
+        </div>
+
+        <div class="col-span-2 py-2">
+          <h2 class="font-semibold tracking-wider text-xl 2xl:text-3xl py-2">
+            Fasilitas Umum
+          </h2>
+          <div class="py-1 lg:grid grid-rows-5 grid-flow-col">
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/motorbike.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Parkir Motor
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/refrigerator.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Kulkas</p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/customer-service.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Penjaga Kos
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/bedroom.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Ruang Santai
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/dispenser.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Dispenser
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/washing-machine.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Ruang Cuci
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/sofa.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Ruang Tamu
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/clothes-hanger.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Ruang Jemur
+              </p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/kitchen.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">Dapur</p>
+            </div>
+            <div class="flex space-x-2 items-center pb-2">
+              <img
+                src="../../public/img/icon/card-access.svg"
+                class="h-5 2xl:h-10"
+                alt="icon"
+              />
+              <p class="2xl:text-2xl text-gray-900 font-medium pl-2">
+                Kartu Akses
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -270,7 +290,7 @@
 
 <script>
 import data from "../data/room.json";
-import { Carousel, Slide } from "vue3-carousel";
+import { Carousel, Navigation, Slide } from "vue3-carousel";
 
 export default {
   name: "RoomDetail",
@@ -278,6 +298,7 @@ export default {
   components: {
     Carousel,
     Slide,
+    Navigation,
   },
 
   methods: {
