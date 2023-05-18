@@ -112,7 +112,7 @@
             >
               Start from
               <span class="font-semibold text-gray-900 ml-1"
-                >{{ formatPrice(room.price) }} / {{ room.status }}</span
+                >{{ formatPrice(room.price) }}/{{ room.status }}</span
               >
             </p>
 

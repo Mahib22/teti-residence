@@ -5,7 +5,7 @@
         <img
           :src="item"
           alt="img-slide"
-          class="h-40 lg:h-80 2xl:h-128 w-full object-cover"
+          class="h-60 lg:h-128 2xl:h-128 w-full object-cover"
         />
       </Slide>
 
