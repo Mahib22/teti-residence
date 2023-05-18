@@ -1,13 +1,23 @@
 <template>
   <div
-    class="flex space-x-12 py-4 2xl:py-6 px-8 border-b overflow-x-auto hide-scroll-bar cursor-pointer font-inter 2xl:text-2xl text-gray-400 whitespace-nowrap"
+    class="flex space-x-12 py-4 2xl:py-6 px-8 border-b overflow-x-auto hide-scroll-bar font-inter 2xl:text-2xl text-gray-400"
   >
-    <p v-scroll-to="'#rooms'">Rooms</p>
-    <p v-scroll-to="'#terrace'">Terrace</p>
-    <p v-scroll-to="'#bathroom'">Bathroom</p>
-    <p v-scroll-to="'#kitchen'">Kitchen</p>
-    <p v-scroll-to="'#parkingarea'">Parking Area</p>
-    <p v-scroll-to="'#outdoor'">Outdoor</p>
+    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#rooms'">Rooms</p>
+    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#terrace'">
+      Terrace
+    </p>
+    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#bathroom'">
+      Bathroom
+    </p>
+    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#kitchen'">
+      Kitchen
+    </p>
+    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#parkingarea'">
+      Parking Area
+    </p>
+    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#outdoor'">
+      Outdoor
+    </p>
   </div>
 
   <div v-for="item in categories" :key="item.id">

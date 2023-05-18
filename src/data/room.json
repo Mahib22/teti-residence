@@ -129,7 +129,8 @@
     "floor": 3,
     "status": "Month",
     "image": [
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room.jpg?alt=media&token=97be8651-bfeb-4052-8c5e-bb34f7f297f3",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
     ]
   },
   {
@@ -143,7 +144,8 @@
     "floor": 3,
     "status": "Month",
     "image": [
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room.jpg?alt=media&token=97be8651-bfeb-4052-8c5e-bb34f7f297f3",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
     ]
   },
   {
@@ -157,7 +159,8 @@
     "floor": 2,
     "status": "Month",
     "image": [
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room.jpg?alt=media&token=97be8651-bfeb-4052-8c5e-bb34f7f297f3",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
     ]
   },
   {
@@ -171,7 +174,8 @@
     "floor": 2,
     "status": "Month",
     "image": [
-      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-shower.jpg?alt=media&token=8b43c60a-af47-4d77-8939-dfb30a91e67b"
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room.jpg?alt=media&token=97be8651-bfeb-4052-8c5e-bb34f7f297f3",
+      "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-shower.JPG?alt=media&token=8a9c53a1-3c9c-4af2-a41c-9fa410705634"
     ]
   }
 ]

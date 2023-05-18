@@ -129,26 +129,31 @@
       class="flex-col mt-4 p-4 md:p-0 md:flex md:flex-row md:items-center md:space-x-8 2xl:space-x-16 md:mt-0 border border-gray-100 rounded-lg bg-gray-50 md:border-0 md:bg-white"
     >
       <li
+        @click="showMenu = !showMenu"
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
         <router-link :to="{ name: 'Home' }">Home</router-link>
       </li>
       <li
+        @click="showMenu = !showMenu"
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
         <router-link :to="{ name: 'Accomodations' }">Accomodations</router-link>
       </li>
       <li
+        @click="showMenu = !showMenu"
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
         <router-link :to="{ name: 'Gallery' }">Gallery</router-link>
       </li>
       <li
+        @click="showMenu = !showMenu"
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
         <router-link :to="{ name: 'News' }">News</router-link>
       </li>
       <li
+        @click="showMenu = !showMenu"
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
