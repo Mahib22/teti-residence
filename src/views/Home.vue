@@ -236,29 +236,26 @@ import { Rating } from "flowbite-vue";
   <section class="bg-black py-12 2xl:py-16">
     <h1 class="text-white text-5xl 2xl:text-7xl font-light font-italian">
       <marquee-text :repeat="5">
-        Frequently Asked Questions <span class="px-2">•</span>
+        Pertanyaan yang sering diajukan <span class="px-2">•</span>
       </marquee-text>
     </h1>
   </section>
 
   <section class="mx-5 py-8 2xl:p-9 px-4 font-inter">
     <details
-      v-for="n in 4"
-      :key="n"
+      v-for="(item, index) in faq"
+      :key="index"
       class="transition duration-150 ease-in-out"
     >
       <summary
         class="flex items-center justify-between w-full py-8 2xl:py-20 font-medium text-left text-gray-900 border-b border-gray-200 cursor-pointer 2xl:text-4xl"
       >
-        Are the facilities provided in accordance with the price listed ?
+        {{ item.question }}
       </summary>
       <p
         class="py-12 2xl:py-24 2xl:pr-60 border-b border-gray-200 text-gray-600 2xl:text-3xl"
       >
-        We provide many facilities for you. There are facilities such as a AC,
-        Wifi, Lemari, TV Cable, Spring Bed, Water Heater, Kamar Mandi Dalam,
-        Dapur Bersama, Kulkas Bersama, Area Parkir Motor, Security 1 x 24 Jam,
-        Laundry 2 Stell / Hari, dan lain - lain
+        {{ item.answer }}
       </p>
     </details>
   </section>
@@ -418,6 +415,37 @@ export default {
           title: "Safe and Convenient Location",
           description:
             "Our Boarding House environment is very safe, because it is always monitored by CCTV and 1 x 24 hour security. You don't need to worry about staying here, both men and women we guarantee the safety and your luggage here.",
+        },
+      ],
+      faq: [
+        {
+          question:
+            "Fasilitas apa saja yang disediakan oleh di Teti Residence?",
+          answer:
+            "Nikmati kenyamanan menginap di Teti Residence dengan kamar-kamar yang dilengkapi fasilitas lengkap, termasuk AC, TV, Wi-Fi, kamar mandi dalam, lemari, serta layanan laundry 2 stel/hari (Tidak semua harga kamar termasuk dengan laundry). Selain itu, tersedia fasilitas dapur dengan kulkas, water heater yang menggunakan tenaga matahari, dan parkiran motor yang dapat digunakan bersama-sama. Nikmati kenyamanan dan kemudahan fasilitas yang disediakan oleh Teti Residence!",
+        },
+        {
+          question:
+            "Apa saja pilihan transportasi yang tersedia di sekitar Teti Residence?",
+          answer:
+            "Di Teti Residence, Anda dapat dengan mudah mengakses berbagai pilihan transportasi. Salah satunya adalah transportasi JAKLINDO dengan halte yang hanya berjarak 6 menit berjalan kaki dari lokasi kami. Selain itu, lokasi kami sangat mudah dijangkau melalui layanan transportasi online motor maupun mobil. Tidak hanya itu, Teti Residence juga memiliki keunggulan lokasi dengan jarak hanya 400 meter dari stasiun Mangga Besar. Nikmati kemudahan akses transportasi yang menarik di sekitar Teti Residence!",
+        },
+        {
+          question:
+            "Apakah Teti Residence mengizinkan tamu untuk menginap berpasangan atau membawa teman?",
+          answer:
+            "Teti Residence menyambut kedatangan pasangan, baik pasangan pacar maupun suami istri. Namun, diharapkan untuk memperhatikan bahwa kami tidak mengizinkan teman untuk menginap atau bermalam di kamar Kos. Kami menyediakan opsi kamar harian yang dapat digunakan bagi tamu yang ingin menginap sesuai dengan harga yang telah ditentukan.",
+        },
+        {
+          question: "Apakah akses keluar masuk di kos diberlakukan pembatasan?",
+          answer:
+            "Teti Residence menerapkan kebijakan akses keluar masuk yang khusus bagi penghuni kost dan kamar harian, yang dapat diakses 24 jam sehari. Namun, untuk tamu yang berkunjung, kami membatasi akses hingga pukul 24:00 dan meminta izin kepada pengelola atau resepsionis.",
+        },
+        {
+          question:
+            "Apakah ada fasilitas keamanan yang tersedia di Teti Residence?",
+          answer:
+            "Teti Residence menjaga keamanan dengan adanya pelayanan Reception yang siap membantu 24 jam. Kami telah menyediakan 3 sudut CCTV di area parkir, 2 sudut di lantai 1, 3 sudut di lantai 2, 3 sudut di lantai 3, 3 sudut di lantai 4, dan 1 sudut di lantai 5. Totalnya, tersedia 16 sudut CCTV, termasuk 1 di kantor. Untuk akses masuk ke dalam Teti Residence, kami menggunakan sistem fingerprint, kartu akses, atau gantungan kunci guna menghindari duplikasi kunci dan meningkatkan keamanan hunian.",
         },
       ],
       testimoniSlide: {
