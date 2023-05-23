@@ -115,7 +115,6 @@ import { Rating } from "flowbite-vue";
       Anda bisa sewa kost di Mangga Besar dengan sistem harian, mingguan, atau
       bulanan. Lokasi kost sangat strategis dekat dengan Stasiun, Mall, dan
       Tempat Wisata lainnya.
-      <a href="#" class="underline text-blue-800">See Less</a>
     </p>
   </section>
 
@@ -222,10 +221,9 @@ import { Rating } from "flowbite-vue";
       </div>
       <div class="lg:w-2/3 w-full lg:pl-12 mt-2 font-inter">
         <p class="text-gray-500 2xl:text-3xl md:mr-8 2xl:mr-24">
-          The Deluxe Room type is designed with a luxurious modern design.
-          Suitable for young executives or students who are looking for a wider
-          elegant atmosphere to increase work productivity.
-          <a href="#" class="underline text-blue-800">See More</a>
+          Tipe Kamar Deluxe kami menawarkan ruangan yang luas dan nyaman. Ideal
+          untuk eksekutif muda atau mahasiswa yang membutuhkan ruang lebih luas
+          untuk meningkatkan produktivitas kerja mereka.
         </p>
       </div>
     </div>
@@ -321,16 +319,14 @@ import { Rating } from "flowbite-vue";
           :wrap-around="true"
           ref="myCarousel"
         >
-          <Slide v-for="slide in 10" :key="slide">
+          <Slide v-for="item in reviews" :key="item">
             <div
               class="p-4 2xl:p-16 mx-2 bg-white border border-gray-200 hover:bg-gray-900 text-gray-500 hover:text-gray-100 cursor-pointer 2xl:text-3xl"
             >
-              <p class="mb-4">
-                "Ga berisik, tenang dan gampang order makanan dari kamar."
-              </p>
-              <Rating :rating="4" size="md" class="mb-2 flex justify-center" />
-              <p class="text-center">Nindi</p>
-              <p class="text-center">UI/UX Designer</p>
+              <p class="mb-4">"{{ item.text }}"</p>
+              <Rating :rating="5" size="md" class="mb-2 flex justify-center" />
+              <p class="text-center">{{ item.user }}</p>
+              <p class="text-center">{{ item.role }}</p>
             </div>
           </Slide>
         </Carousel>
@@ -394,27 +390,27 @@ export default {
       benefits: [
         {
           icon: "map",
-          title: "Strategic Location",
+          title: "Lokasi Strategis",
           description:
-            "The Teti Residence is located on Jalan Mangga Besar 13, Central Jakarta. Closeto Malls, Hospitals, Minimarkets, Universities and other places. You can go anywhere easily.",
+            "Teti Residence terletak di Jalan Mangga Besar 13, Jakarta Pusat. Dekat dengan mal, rumah sakit, minimarket, universitas, dan tempat lainnya. Mudah menuju berbagai tujuan.",
         },
         {
           icon: "money",
-          title: "Cheaper Price",
+          title: "Harga Terjangkau",
           description:
-            "The Teti Residence offers a lower price. You can rent a boarding house on a Daily, Weekly and Monthly basis. The boarding rooms offered range from Deluxe Rooms, Superior Rooms, Standard Rooms, and Studio Rooms",
+            "Teti Residence menawarkan harga terjangkau untuk menyewa kos. Kami menyediakan opsi sewa harian, mingguan, dan bulanan. Pilihan kamar kos kami mencakup Kamar Deluxe, Kamar Superior, Kamar Standar, dan Kamar Studio.",
         },
         {
           icon: "fridge",
-          title: "Complete Facilities",
+          title: "Fasilitas Komplit",
           description:
-            "We provide many facilities for you. There are facilities such as a kitchen, Wifi, TV, parking area, and many more",
+            "Kami menyediakan beragam fasilitas lengkap untuk kenyamanan Anda. Fasilitas yang tersedia mencakup dapur, Wifi, TV, area parkir sepeda motor, layanan laundry, dan masih banyak fasilitas lainnya.",
         },
         {
           icon: "shield",
-          title: "Safe and Convenient Location",
+          title: "Tempat yang Nyaman dan Aman",
           description:
-            "Our Boarding House environment is very safe, because it is always monitored by CCTV and 1 x 24 hour security. You don't need to worry about staying here, both men and women we guarantee the safety and your luggage here.",
+            "Lingkungan kos-kosan kami sangat aman dan terjaga, dengan pemantauan CCTV   dan keamanan 24 jam. Tidak perlu khawatir, baik pria maupun wanita, kami menjamin keamanan Anda dan barang bawaan Anda.",
         },
       ],
       faq: [
@@ -446,6 +442,23 @@ export default {
             "Apakah ada fasilitas keamanan yang tersedia di Teti Residence?",
           answer:
             "Teti Residence menjaga keamanan dengan adanya pelayanan Reception yang siap membantu 24 jam. Kami telah menyediakan 3 sudut CCTV di area parkir, 2 sudut di lantai 1, 3 sudut di lantai 2, 3 sudut di lantai 3, 3 sudut di lantai 4, dan 1 sudut di lantai 5. Totalnya, tersedia 16 sudut CCTV, termasuk 1 di kantor. Untuk akses masuk ke dalam Teti Residence, kami menggunakan sistem fingerprint, kartu akses, atau gantungan kunci guna menghindari duplikasi kunci dan meningkatkan keamanan hunian.",
+        },
+      ],
+      reviews: [
+        {
+          text: "Tempatnya bersih, dekat kemana-mana dan murah lagi.",
+          user: "Amanda",
+          role: "Karyawan Swasta",
+        },
+        {
+          text: "Ga berisik, tenang dan gampang order makanan dari kamar.",
+          user: "Nindi",
+          role: "UI/UX Designer",
+        },
+        {
+          text: "Udah 3 tahun disini. Nyaman, bersih, lengkap dan murah.",
+          user: "Eric",
+          role: "Pegawai Mall",
         },
       ],
       testimoniSlide: {
