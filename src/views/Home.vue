@@ -340,8 +340,8 @@ import { Rating } from "flowbite-vue";
 
   <section class="py-12 2xl:py-20">
     <Carousel :autoplay="2000" :breakpoints="clientSlide" :wrap-around="true">
-      <Slide v-for="slide in 10" :key="slide">
-        <img src="img/client/mamikos.png" alt="mamikos" />
+      <Slide v-for="item in clients" :key="item">
+        <img :src="'img/client/' + item" :alt="item" class="h-20" />
       </Slide>
     </Carousel>
   </section>
@@ -460,6 +460,14 @@ export default {
           user: "Eric",
           role: "Pegawai Mall",
         },
+      ],
+      clients: [
+        "traveloka.png",
+        "olx.png",
+        "mamikos.png",
+        "papikos.png",
+        "facebook.png",
+        "instagram.jpg",
       ],
       testimoniSlide: {
         768: {
