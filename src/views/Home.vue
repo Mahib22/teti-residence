@@ -466,7 +466,7 @@ export default {
         "olx.png",
         "mamikos.png",
         "papikos.png",
-        "facebook.png",
+        "facebook.jpg",
         "instagram.jpg",
       ],
       testimoniSlide: {
