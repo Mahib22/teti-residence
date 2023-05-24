@@ -5,16 +5,16 @@ import { Rating } from "flowbite-vue";
 <template>
   <!-- SECTION HERO -->
   <Carousel :autoplay="4000" :wrap-around="true" :touch-drag="false">
-    <Slide v-for="n in 5" :key="n">
+    <Slide v-for="(item, index) in hero" :key="index">
       <div
         class="h-72 md:h-screen bg-cover w-full"
-        style="background-image: url('img/hero.png')"
+        :style="'background-image: url(' + item.img + ')'"
       >
         <div class="text-left mt-48 md:mt-70">
           <h1
             class="mb-2 pl-4 md:pl-12 text-2xl md:text-6xl font-light text-white font-italian"
           >
-            Deluxe Room
+            {{ item.title }}
           </h1>
           <div class="flex items-center font-inter">
             <div class="w-3/5 md:w-85 bg-gray-400 h-0.5">
@@ -22,7 +22,8 @@ import { Rating } from "flowbite-vue";
             </div>
 
             <h1 class="pl-8 font-bold">
-              <span class="text-white text-2xl md:text-5xl">0{{ n }}</span
+              <span class="text-white text-2xl md:text-5xl"
+                >0{{ index + 1 }}</span
               ><span class="text-gray-600 text-lg md:text-2xl"> /05</span>
             </h1>
           </div>
@@ -132,20 +133,16 @@ import { Rating } from "flowbite-vue";
   >
     <div class="mx-auto flex flex-wrap">
       <div class="md:w-1/3 w-full md:h-auto">
-        <img
-          alt="img"
-          class="h-4/5 object-cover w-full"
-          :src="'img/gallery/' + image_default"
-        />
+        <img alt="img" class="h-4/5 object-cover w-full" :src="image_default" />
         <Carousel :items-to-show="3" :wrap-around="true" class="my-2 w-full">
-          <Slide v-for="slide in slides" :key="slide">
+          <Slide v-for="(slide, index) in slides" :key="index">
             <div
               @click="changeImage(slide)"
               :class="slide == image_default ? '' : 'opacity-25'"
             >
               <img
-                :src="'img/gallery/' + slide"
-                :alt="slide"
+                :src="slide"
+                :alt="index"
                 class="px-1 h-36 object-cover cursor-pointer"
               />
             </div>
@@ -197,10 +194,10 @@ import { Rating } from "flowbite-vue";
   </section>
 
   <Carousel :touch-drag="false">
-    <Slide v-for="n in 5" :key="n">
+    <Slide v-for="(item, index) in galleries" :key="index">
       <img
-        src="img/hero.png"
-        alt="img"
+        :src="item"
+        :alt="index"
         class="h-72 md:h-screen w-full object-cover"
       />
     </Slide>
@@ -340,8 +337,10 @@ import { Rating } from "flowbite-vue";
 
   <section class="py-12 2xl:py-20">
     <Carousel :autoplay="2000" :breakpoints="clientSlide" :wrap-around="true">
-      <Slide v-for="item in clients" :key="item">
-        <img :src="'img/client/' + item" :alt="item" class="h-20" />
+      <Slide v-for="(item, index) in clients" :key="index">
+        <a :href="item.url">
+          <img :src="'img/client/' + item.img" :alt="item.img" class="h-20"
+        /></a>
       </Slide>
     </Carousel>
   </section>
@@ -367,6 +366,28 @@ export default {
 
   data() {
     return {
+      hero: [
+        {
+          img: "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room.jpg?alt=media&token=97be8651-bfeb-4052-8c5e-bb34f7f297f3",
+          title: "Deluxe Room",
+        },
+        {
+          img: "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room-2.jpg?alt=media&token=c4ac0805-5030-4b6e-a918-6f80c31af6df",
+          title: "Deluxe Room",
+        },
+        {
+          img: "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-Room-scaled.jpg?alt=media&token=87876ad6-410f-47f9-bfb0-e3ca81633073",
+          title: "Superior Room",
+        },
+        {
+          img: "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Superior-room-2.jpg?alt=media&token=e7bd254a-0403-4354-b1b4-9157350aa01c",
+          title: "Superior Room",
+        },
+        {
+          img: "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/Standard-Room-1-scaled.jpg?alt=media&token=2fd1a8d4-29ae-42d8-a94d-48ce77db8a58",
+          title: "Standard Room",
+        },
+      ],
       facilities: [
         {
           number: 6,
@@ -385,8 +406,15 @@ export default {
           title: "Room Facilites",
         },
       ],
-      image_default: "img1.png",
-      slides: ["img1.png", "img2.png", "img3.png"],
+      image_default:
+        "https://asset.kompas.com/crops/mfvG8kTG7bvaWXx79bKTJ10HZh8=/100x82:900x615/750x500/data/photo/2018/04/18/623178336.jpg",
+      slides: [
+        "img/gallery/img2.png",
+        "img/gallery/img3.png",
+        "https://asset.kompas.com/crops/mfvG8kTG7bvaWXx79bKTJ10HZh8=/100x82:900x615/750x500/data/photo/2018/04/18/623178336.jpg",
+        "https://parboaboa.com/data/foto_berita/jalan-raya-mangga-besar2.webp",
+        "https://images.unsplash.com/photo-1566205780052-9657b0ed76e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8a290YSUyMHR1YXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+      ],
       benefits: [
         {
           icon: "map",
@@ -412,6 +440,10 @@ export default {
           description:
             "Lingkungan kos-kosan kami sangat aman dan terjaga, dengan pemantauan CCTV   dan keamanan 24 jam. Tidak perlu khawatir, baik pria maupun wanita, kami menjamin keamanan Anda dan barang bawaan Anda.",
         },
+      ],
+      galleries: [
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room.jpg?alt=media&token=97be8651-bfeb-4052-8c5e-bb34f7f297f3",
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/deluxe-room-2.jpg?alt=media&token=c4ac0805-5030-4b6e-a918-6f80c31af6df",
       ],
       faq: [
         {
@@ -462,12 +494,30 @@ export default {
         },
       ],
       clients: [
-        "traveloka.png",
-        "olx.png",
-        "mamikos.png",
-        "papikos.png",
-        "facebook.jpg",
-        "instagram.jpg",
+        {
+          img: "traveloka.png",
+          url: "https://www.traveloka.com/id-id/hotel/indonesia/the-teti-residence-3000010038608?HOTEL.3000010038608.The%20Teti%20Residence.2",
+        },
+        {
+          img: "olx.png",
+          url: "https://www.olx.co.id/profile/66718103",
+        },
+        {
+          img: "mamikos.png",
+          url: "https://mamikos.com/",
+        },
+        {
+          img: "papikos.png",
+          url: "https://papikost.com/kost/mangga-dua-selatan/the-teti-residence/105/",
+        },
+        {
+          img: "facebook.jpg",
+          url: "https://www.facebook.com/Tetikost?mibextid=ZbWKwL",
+        },
+        {
+          img: "instagram.jpg",
+          url: "https://www.instagram.com/tetikost/",
+        },
       ],
       testimoniSlide: {
         768: {
