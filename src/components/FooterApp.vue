@@ -8,8 +8,11 @@
         class="flex flex-col md:flex-row md:justify-between items-center 2xl:text-3xl"
       >
         <div class="flex mt-4 space-x-6 2xl:space-x-12 justify-center sm:mt-0">
-          <a href="#" class="text-gray-500 hover:text-gray-900"
-            >Accomodations</a
+          <router-link
+            :to="{ name: 'Accomodations' }"
+            active-class
+            class="text-gray-500 hover:text-gray-900"
+            >Accomodations</router-link
           >
           <a href="#" class="text-gray-500 hover:text-gray-900">Privacy</a>
           <a href="#" class="text-gray-500 hover:text-gray-900">Policy</a>
@@ -24,7 +27,11 @@
         </div>
 
         <div class="flex mt-4 space-x-6 2xl:space-x-12 justify-center sm:mt-0">
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a
+            href="mailto:tetikost@gmail.com"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -40,7 +47,11 @@
               />
             </svg>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a
+            href="https://www.instagram.com/tetikost/"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900"
+          >
             <svg
               class="w-5 h-5 2xl:w-10 2xl:h-10"
               fill="currentColor"
@@ -54,7 +65,11 @@
               />
             </svg>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a
+            href="https://www.facebook.com/Tetikost?mibextid=ZbWKwL"
+            target="_blank"
+            class="text-gray-500 hover:text-gray-900"
+          >
             <svg
               class="w-5 h-5 2xl:w-10 2xl:h-10"
               fill="currentColor"
@@ -78,11 +93,38 @@
           © 2023 The Teti Residence | All Rights Reserved.
         </p>
         <p class="text-sm 2xl:text-3xl text-gray-500">
-          Link luar : <a href="#" class="underline">Mamikos</a> |
-          <a href="#" class="underline">OLX</a> |
-          <a href="#" class="underline">Traveloka</a> |
-          <a href="#" class="underline">Papikost</a> |
-          <a href="#" class="underline">TripAdvisor</a>
+          Link luar :
+          <a href="https://mamikos.com/" target="_blank" class="underline"
+            >Mamikos</a
+          >
+          |
+          <a
+            href="https://www.olx.co.id/profile/66718103"
+            target="_blank"
+            class="underline"
+            >OLX</a
+          >
+          |
+          <a
+            href="https://www.traveloka.com/id-id/hotel/indonesia/the-teti-residence-3000010038608?HOTEL.3000010038608.The%20Teti%20Residence.2"
+            target="_blank"
+            class="underline"
+            >Traveloka</a
+          >
+          |
+          <a
+            href="https://papikost.com/kost/mangga-dua-selatan/the-teti-residence/105/"
+            target="_blank"
+            class="underline"
+            >Papikost</a
+          >
+          |
+          <a
+            href="https://www.tripadvisor.co.id/Hotel_Review-g294229-d12496067-Reviews-The_Teti_Residence-Jakarta_Java.html"
+            target="_blank"
+            class="underline"
+            >TripAdvisor</a
+          >
         </p>
       </div>
     </div>

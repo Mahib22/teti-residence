@@ -338,7 +338,7 @@ import { Rating } from "flowbite-vue";
   <section class="py-12 2xl:py-20">
     <Carousel :autoplay="2000" :breakpoints="clientSlide" :wrap-around="true">
       <Slide v-for="(item, index) in clients" :key="index">
-        <a :href="item.url">
+        <a :href="item.url" target="_blank">
           <img :src="'img/client/' + item.img" :alt="item.img" class="h-20"
         /></a>
       </Slide>
@@ -407,13 +407,12 @@ export default {
         },
       ],
       image_default:
-        "https://asset.kompas.com/crops/mfvG8kTG7bvaWXx79bKTJ10HZh8=/100x82:900x615/750x500/data/photo/2018/04/18/623178336.jpg",
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/landingpage-cityview-1.png?alt=media&token=33d8bc33-55ea-477a-8cb0-853f9a8effd6",
       slides: [
-        "img/gallery/img2.png",
-        "img/gallery/img3.png",
-        "https://asset.kompas.com/crops/mfvG8kTG7bvaWXx79bKTJ10HZh8=/100x82:900x615/750x500/data/photo/2018/04/18/623178336.jpg",
-        "https://parboaboa.com/data/foto_berita/jalan-raya-mangga-besar2.webp",
-        "https://images.unsplash.com/photo-1566205780052-9657b0ed76e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8a290YSUyMHR1YXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/landingpage-cityview-1.png?alt=media&token=33d8bc33-55ea-477a-8cb0-853f9a8effd6",
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/landingpage-cityview-2.jpg?alt=media&token=8ca8ac5e-f24b-463a-ae34-fa1ea56070c2",
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/landingpage-cityview-3.jpg?alt=media&token=cdfa7828-bf57-48db-b3fd-1670bbf2ce76",
+        "https://firebasestorage.googleapis.com/v0/b/gallery-teti.appspot.com/o/landingpage-cityview-4.jpg?alt=media&token=846b167f-189e-445f-ad7f-d6fd77f26c2a",
       ],
       benefits: [
         {
