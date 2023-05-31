@@ -2,9 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Accomodations from "../views/Accomodations.vue";
 import Gallery from "../views/Gallery.vue";
-import News from "../views/News.vue";
+import Articles from "../views/Articles.vue";
 import Contact from "../views/Contact.vue";
 import RoomDetail from "../views/RoomDetail.vue";
+import ArticleDetail from "../views/ArticleDetail.vue";
 
 const routes = [
   {
@@ -23,9 +24,9 @@ const routes = [
     component: Gallery,
   },
   {
-    path: "/news",
-    name: "News",
-    component: News,
+    path: "/articles",
+    name: "Articles",
+    component: Articles,
   },
   {
     path: "/contact",
@@ -36,6 +37,12 @@ const routes = [
     path: "/room/:id",
     name: "RoomDetail",
     component: RoomDetail,
+    props: true,
+  },
+  {
+    path: "/article/:id",
+    name: "ArticleDetail",
+    component: ArticleDetail,
     props: true,
   },
 ];

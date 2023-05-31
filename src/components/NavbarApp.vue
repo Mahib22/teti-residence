@@ -116,7 +116,7 @@
         @click="showMenu = !showMenu"
         class="py-2 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 2xl:text-3xl"
       >
-        <router-link :to="{ name: 'News' }">News</router-link>
+        <router-link :to="{ name: 'Articles' }">Articles</router-link>
       </li>
       <li
         @click="showMenu = !showMenu"

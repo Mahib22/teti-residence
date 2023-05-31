@@ -37,7 +37,7 @@
       <div v-for="n in 7" :key="n">
         <img
           class="h-28 md:h-56 max-w-full object-cover"
-          src="img/room/img2.png"
+          src="img/img2.png"
           alt="gallery"
         />
       </div>

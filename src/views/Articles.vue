@@ -36,7 +36,7 @@
       <div v-for="n in 6" :key="n" class="mb-4">
         <img
           class="h-48 w-full object-cover"
-          src="img/news/img1.png"
+          src="img/img1.png"
           alt="card-image"
         />
         <div class="flex items-center space-x-2 py-2">
@@ -68,7 +68,7 @@
 
 <script>
 export default {
-  name: "News",
+  name: "Articles",
 
   data() {
     return {
