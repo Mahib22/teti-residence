@@ -1,8 +1,11 @@
 <template>
   <div
-    class="flex space-x-12 py-4 2xl:py-6 px-8 border-b overflow-x-auto hide-scroll-bar font-inter 2xl:text-2xl text-gray-400"
+    class="flex space-x-12 py-4 2xl:py-6 px-8 border-b overflow-x-auto hide-scroll-bar font-inter 2xl:text-2xl"
   >
-    <p class="cursor-pointer whitespace-nowrap" v-scroll-to="'#lastest'">
+    <p
+      class="cursor-pointer whitespace-nowrap text-gray-400 hover:text-gray-900"
+      v-scroll-to="'#lastest'"
+    >
       Lastest
     </p>
   </div>
