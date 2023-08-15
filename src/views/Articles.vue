@@ -34,7 +34,7 @@
       <div v-for="n in 6" :key="n" class="mb-4">
         <router-link :to="{ name: 'RoomDetail', params: { id: n } }">
           <img
-            class="h-48 w-full object-cover"
+            class="h-48 w-full object-cover rounded-2xl"
             src="img/img1.png"
             alt="card-image"
           />
