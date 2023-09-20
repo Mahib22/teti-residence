@@ -32,7 +32,7 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-3 pb-8 px-4 md:px-8"
     >
       <div v-for="n in 6" :key="n" class="mb-4">
-        <router-link :to="{ name: 'RoomDetail', params: { id: n } }">
+        <router-link :to="{ name: 'ArticleDetail', params: { id: n } }">
           <img
             class="h-48 w-full object-cover rounded-2xl"
             src="img/img1.png"
