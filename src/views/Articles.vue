@@ -11,7 +11,7 @@
       </p>
       <p
         v-for="item in categories"
-        :key="item.name"
+        :key="item.id"
         class="cursor-pointer whitespace-nowrap text-gray-400 hover:text-gray-900"
       >
         {{ item.name }}
@@ -31,12 +31,12 @@
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-3 pb-8 px-4 md:px-8"
     >
-      <div v-for="n in 6" :key="n" class="mb-4">
-        <router-link :to="{ name: 'ArticleDetail', params: { id: n } }">
+      <div v-for="item in articles" :key="item.id" class="mb-4">
+        <router-link :to="{ name: 'ArticleDetail', params: { id: item.slug } }">
           <img
             class="h-48 w-full object-cover rounded-2xl"
-            src="img/img1.png"
-            alt="card-image"
+            :src="item.image"
+            :alt="item.altImage"
           />
           <div class="flex items-center space-x-2 py-2">
             <svg
@@ -54,11 +54,11 @@
               />
             </svg>
             <p class="font-inter text-sm 2xl:text-lg text-gray-500">
-              10 mins ago
+              {{ item.publishedDate }}
             </p>
           </div>
           <h1 class="font-inter font-semibold lg:text-xl 2xl:text-2xl">
-            Big Mango Street Boarding House 2
+            {{ item.title }}
           </h1>
         </router-link>
       </div>
@@ -70,6 +70,7 @@
 import { ref, onUnmounted } from "vue";
 import db from "../firebase";
 import { onSnapshot, collection, query } from "firebase/firestore";
+import moment from "moment";
 
 export default {
   name: "Articles",
@@ -77,12 +78,13 @@ export default {
   data() {
     return {
       categories: ref([]),
+      articles: ref([]),
     };
   },
 
   mounted() {
-    const latestQuery = query(collection(db, "categories"));
-    const livemessages = onSnapshot(latestQuery, (snapshot) => {
+    const category = query(collection(db, "categories"));
+    const getCategory = onSnapshot(category, (snapshot) => {
       this.categories = snapshot.docs.map((doc) => {
         return {
           id: doc.id,
@@ -90,7 +92,22 @@ export default {
         };
       });
     });
-    onUnmounted(livemessages);
+
+    const article = query(collection(db, "articles"));
+    const getArticle = onSnapshot(article, (snapshot) => {
+      this.articles = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          title: doc.data().title,
+          slug: doc.data().slug,
+          publishedDate: moment(new Date(doc.data().publishedDate)).fromNow(),
+          image: doc.data().imageUrl1,
+          altImage: doc.data().altImage1,
+        };
+      });
+    });
+
+    onUnmounted(getCategory, getArticle);
   },
 };
 </script>

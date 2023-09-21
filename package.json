@@ -12,6 +12,7 @@
     "firebase": "^10.1.0",
     "flowbite": "^1.6.4",
     "flowbite-vue": "^0.0.10",
+    "moment": "^2.29.4",
     "vue": "^3.0.0",
     "vue-marquee-text-component": "^2.0.1",
     "vue-router": "^4.0.0-0",
