@@ -5,8 +5,10 @@
     style="background-image: url('img/hero.png')"
   >
     <div class="px-4 mx-auto text-center py-24 lg:py-48 2xl:py-64 text-white">
-      <h1 class="mb-4 md:mb-12 text-4xl font-italian md:text-6xl 2xl:text-8xl">
-        Accomodations .
+      <h1
+        class="mb-4 md:mb-12 text-4xl font-italian md:text-6xl 2xl:text-8xl uppercase"
+      >
+        Accomodations
       </h1>
       <p class="text-sm font-inter md:text-xl 2xl:text-4xl sm:px-16 lg:px-48">
         There are various boarding rooms that can make you comfortable

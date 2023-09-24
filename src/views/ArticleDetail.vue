@@ -1,5 +1,31 @@
 <template>
   <section class="w-full lg:w-4/5 mx-auto min-h-screen p-4 2xl:p-8">
+    <div class="flex mb-4 2xl:mb-8">
+      <div class="bg-gray-100 w-auto rounded-md">
+        <div class="flex items-center space-x-2 p-2 2xl:p-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#BBBBBB"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+          <router-link
+            :to="{ name: 'Articles' }"
+            class="font-inter 2xl:text-2xl text-gray-400"
+            >Back</router-link
+          >
+        </div>
+      </div>
+    </div>
+
     <img
       :src="article.imageUrl1"
       :alt="article.altImage1"
@@ -14,11 +40,32 @@
           {{ article.category }}
         </span>
       </div>
-      <h1
-        class="text-gray-900 text-3xl 2xl:text-6xl font-bold uppercase my-6 2xl:my-8"
-      >
-        {{ article.title }}
-      </h1>
+
+      <div class="my-6 2xl:my-8">
+        <h1 class="text-gray-900 text-3xl 2xl:text-6xl font-bold uppercase">
+          {{ article.title }}
+        </h1>
+        <div class="flex items-center justify-end space-x-2 py-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#BBBBBB"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <p class="font-inter text-sm 2xl:text-2xl text-gray-400">
+            {{ formatTime(article.publishedDate) }}
+          </p>
+        </div>
+      </div>
+
       <p
         v-html="article.content"
         class="my-2 2xl:my-4 text-gray-500 leading-relaxed font-medium 2xl:text-3xl"
@@ -37,6 +84,7 @@
 import { ref, onUnmounted } from "vue";
 import db from "../firebase";
 import { onSnapshot, collection, query } from "firebase/firestore";
+import moment from "moment";
 
 export default {
   name: "ArticleDetail",
@@ -45,6 +93,12 @@ export default {
     return {
       article: ref([]),
     };
+  },
+
+  methods: {
+    formatTime(time) {
+      return moment(new Date(time)).fromNow();
+    },
   },
 
   mounted() {
