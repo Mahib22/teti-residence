@@ -3,7 +3,7 @@
     <img
       :src="article.imageUrl1"
       :alt="article.altImage1"
-      class="h-80 w-full object-cover rounded-2xl"
+      class="h-screen w-full object-cover rounded-2xl"
     />
 
     <div class="py-4 lg:py-8 2xl:py-12 font-inter">
@@ -28,7 +28,7 @@
     <img
       :src="article.imageUrl2"
       :alt="article.altImage2"
-      class="h-80 w-full object-cover rounded-2xl mb-12"
+      class="h-screen w-full object-cover rounded-2xl mb-12"
     />
   </section>
 </template>

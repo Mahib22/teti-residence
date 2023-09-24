@@ -4,32 +4,25 @@
       class="flex space-x-12 py-4 2xl:py-6 px-8 border-b overflow-x-auto hide-scroll-bar font-inter 2xl:text-2xl"
     >
       <p
+        @click="filterArticle()"
         class="cursor-pointer whitespace-nowrap text-gray-400 hover:text-gray-900"
-        v-scroll-to="'#lastest'"
+        :class="[activeCategory === '' ? 'text-gray-900' : '']"
       >
         Lastest
       </p>
       <p
         v-for="item in categories"
         :key="item.id"
+        @click="filterArticle(item.slug)"
         class="cursor-pointer whitespace-nowrap text-gray-400 hover:text-gray-900"
+        :class="[item.slug === activeCategory ? 'text-gray-900' : '']"
       >
         {{ item.name }}
       </p>
     </div>
 
     <div
-      class="flex space-x-4 items-center py-4 2xl:py-6 px-4 md:px-8"
-      id="lastest"
-    >
-      <h1 class="font-italian text-xl md:text-2xl 2xl:text-4xl font-medium">
-        Lastest
-      </h1>
-      <img src="img/icon/line.svg" alt="line" />
-    </div>
-
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-3 pb-8 px-4 md:px-8"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-3 py-8 px-4 md:px-8"
     >
       <div v-for="item in articles" :key="item.id" class="mb-4">
         <router-link :to="{ name: 'ArticleDetail', params: { id: item.slug } }">
@@ -63,13 +56,19 @@
         </router-link>
       </div>
     </div>
+
+    <div v-if="articles.length === 0">
+      <h1 class="text-xl md:text-2xl 2xl:text-4xl font-bold text-center">
+        Article not found
+      </h1>
+    </div>
   </section>
 </template>
 
 <script>
-import { ref, onUnmounted } from "vue";
+import { ref } from "vue";
 import db from "../firebase";
-import { onSnapshot, collection, query } from "firebase/firestore";
+import { onSnapshot, collection, query, where } from "firebase/firestore";
 import moment from "moment";
 
 export default {
@@ -79,35 +78,57 @@ export default {
     return {
       categories: ref([]),
       articles: ref([]),
+      activeCategory: "",
     };
   },
 
+  methods: {
+    fetchCategory() {
+      const category = query(collection(db, "categories"));
+      onSnapshot(category, (snapshot) => {
+        this.categories = snapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            name: doc.data().name,
+            slug: doc.data().slug,
+          };
+        });
+      });
+    },
+
+    filterArticle(category) {
+      let article;
+
+      if (category) {
+        article = query(
+          collection(db, "articles"),
+          where("category", "==", category)
+        );
+        this.activeCategory = category;
+      } else {
+        article = query(collection(db, "articles"));
+        this.activeCategory = "";
+      }
+
+      onSnapshot(article, (snapshot) => {
+        this.articles = snapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            title: doc.data().title,
+            slug: doc.data().slug,
+            category: doc.data().category,
+            publishedDate: moment(new Date(doc.data().publishedDate)).fromNow(),
+            image: doc.data().imageUrl1,
+            altImage: doc.data().altImage1,
+          };
+        });
+      });
+    },
+  },
+
   mounted() {
-    const category = query(collection(db, "categories"));
-    const getCategory = onSnapshot(category, (snapshot) => {
-      this.categories = snapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          name: doc.data().name,
-        };
-      });
-    });
-
-    const article = query(collection(db, "articles"));
-    const getArticle = onSnapshot(article, (snapshot) => {
-      this.articles = snapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          title: doc.data().title,
-          slug: doc.data().slug,
-          publishedDate: moment(new Date(doc.data().publishedDate)).fromNow(),
-          image: doc.data().imageUrl1,
-          altImage: doc.data().altImage1,
-        };
-      });
-    });
-
-    onUnmounted(getCategory, getArticle);
+    this.fetchCategory();
+    this.filterArticle();
   },
 };
 </script>
