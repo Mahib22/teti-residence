@@ -51,6 +51,9 @@ const router = createRouter({
   linkActiveClass: "border-b-2 border-blue-500 md:pb-11",
   history: createWebHistory(),
   routes,
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 export default router;

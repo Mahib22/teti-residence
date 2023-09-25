@@ -37,12 +37,14 @@
         <span
           class="bg-gray-200 font-medium text-sm 2xl:text-xl tracking-widest py-2 px-8 rounded-full"
         >
-          {{ article.category }}
+          {{ category }}
         </span>
       </div>
 
       <div class="my-6 2xl:my-8">
-        <h1 class="text-gray-900 text-3xl 2xl:text-6xl font-bold uppercase">
+        <h1
+          class="text-gray-900 text-3xl 2xl:text-6xl font-bold tracking-widest"
+        >
           {{ article.title }}
         </h1>
         <div class="flex items-center justify-end space-x-2 py-2">
@@ -92,12 +94,25 @@ export default {
   data() {
     return {
       article: ref([]),
+      category: "",
     };
   },
 
   methods: {
     formatTime(time) {
       return moment(new Date(time)).fromNow();
+    },
+
+    categoryName(slug) {
+      const getCategory = query(collection(db, "categories"));
+      onSnapshot(getCategory, (snapshot) => {
+        const foundCategory = snapshot.docs.find(
+          (doc) => doc.data().slug === slug
+        );
+        if (foundCategory) {
+          this.category = foundCategory.data().name;
+        }
+      });
     },
   },
 
@@ -110,6 +125,7 @@ export default {
       );
       if (foundArticle) {
         this.article = foundArticle.data();
+        this.categoryName(foundArticle.data().category);
       }
     });
     onUnmounted(getArticle);
