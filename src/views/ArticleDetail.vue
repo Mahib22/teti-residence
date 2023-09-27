@@ -1,14 +1,16 @@
 <template>
   <section class="w-full lg:w-4/5 mx-auto min-h-screen p-4 2xl:p-8">
     <div class="flex mb-4 2xl:mb-8">
-      <div class="bg-gray-100 w-auto rounded-md">
-        <div class="flex items-center space-x-2 p-2 2xl:p-4">
-          <svg
+      <div class="bg-lime w-auto rounded-md">
+        <router-link
+          :to="{ name: 'Articles' }"
+          class="flex items-center space-x-2 p-2 2xl:p-4 font-inter 2xl:text-2xl text-white font-medium"
+          ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#BBBBBB"
+            stroke-width="3.5"
+            stroke="#ffff"
             class="w-4 h-4 2xl:w-8 2xl:h-8"
           >
             <path
@@ -17,12 +19,8 @@
               d="M15.75 19.5L8.25 12l7.5-7.5"
             />
           </svg>
-          <router-link
-            :to="{ name: 'Articles' }"
-            class="font-inter 2xl:text-2xl text-gray-400"
-            >Back</router-link
-          >
-        </div>
+          <span> Back</span>
+        </router-link>
       </div>
     </div>
 
@@ -77,8 +75,32 @@
     <img
       :src="article.imageUrl2"
       :alt="article.altImage2"
-      class="h-screen w-full object-cover rounded-2xl mb-12"
+      class="h-screen w-full object-cover rounded-2xl mb-4 2xl:mb-8"
     />
+
+    <div class="flex mb-12">
+      <div class="bg-lime w-auto rounded-md">
+        <router-link
+          :to="{ name: 'Articles' }"
+          class="flex items-center space-x-2 p-2 2xl:p-4 font-inter 2xl:text-2xl text-white font-medium"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3.5"
+            stroke="#ffff"
+            class="w-4 h-4 2xl:w-8 2xl:h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+          <span> Back</span>
+        </router-link>
+      </div>
+    </div>
   </section>
 </template>
 
