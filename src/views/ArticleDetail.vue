@@ -43,7 +43,7 @@
 
       <div class="my-6 2xl:my-8">
         <h1
-          class="text-gray-900 text-3xl 2xl:text-6xl font-bold tracking-widest"
+          class="text-gray-900 text-3xl 2xl:text-6xl font-bold leading-relaxed"
         >
           {{ article.title }}
         </h1>
