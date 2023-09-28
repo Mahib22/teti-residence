@@ -337,6 +337,8 @@ export default {
     this.floor = room.floor;
     this.status = room.status;
     this.image = room.image;
+
+    document.title = this.name;
   },
 };
 </script>

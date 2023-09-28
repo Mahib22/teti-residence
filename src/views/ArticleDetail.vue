@@ -148,6 +148,9 @@ export default {
       if (foundArticle) {
         this.article = foundArticle.data();
         this.categoryName(foundArticle.data().category);
+        document.title = foundArticle.data().title;
+        document.getElementsByTagName("meta")["description"].content =
+          foundArticle.data().metaDescription;
       }
     });
     onUnmounted(getArticle);

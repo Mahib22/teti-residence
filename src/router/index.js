@@ -12,26 +12,41 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    meta: {
+      title: "Home",
+    },
   },
   {
     path: "/accomodations",
     name: "Accomodations",
     component: Accomodations,
+    meta: {
+      title: "Accomodations",
+    },
   },
   {
     path: "/gallery",
     name: "Gallery",
     component: Gallery,
+    meta: {
+      title: "Gallery",
+    },
   },
   {
     path: "/articles",
     name: "Articles",
     component: Articles,
+    meta: {
+      title: "Articles",
+    },
   },
   {
     path: "/contact",
     name: "Contact",
     component: Contact,
+    meta: {
+      title: "Contact",
+    },
   },
   {
     path: "/room/:id",
@@ -54,6 +69,12 @@ const router = createRouter({
   scrollBehavior() {
     return { top: 0 };
   },
+});
+
+router.beforeEach((to) => {
+  document.title = to.meta?.title ?? "Teti Residence";
+  document.getElementsByTagName("meta")["description"].content =
+    to.meta?.desc ?? "The Teti Residence";
 });
 
 export default router;
