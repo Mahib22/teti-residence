@@ -24,18 +24,12 @@
       </div>
     </div>
 
-    <img
-      :src="article.imageUrl1"
-      :alt="article.altImage1"
-      class="h-screen w-full object-cover rounded-2xl"
-    />
-
     <div class="py-4 lg:py-8 2xl:py-12 font-inter">
       <div class="flex gap-x-4">
         <span
           class="bg-gray-200 font-medium text-sm 2xl:text-xl tracking-widest py-2 px-8 rounded-full"
         >
-          {{ category }}
+          {{ article.category }}
         </span>
       </div>
 
@@ -61,7 +55,7 @@
             />
           </svg>
           <p class="font-inter text-sm 2xl:text-2xl text-gray-400">
-            {{ formatTime(article.publishedDate) }}
+            {{ formatTime(article.date) }}
           </p>
         </div>
       </div>
@@ -71,12 +65,6 @@
         class="my-2 2xl:my-4 text-gray-500 leading-relaxed font-medium 2xl:text-3xl"
       ></p>
     </div>
-
-    <img
-      :src="article.imageUrl2"
-      :alt="article.altImage2"
-      class="h-screen w-full object-cover rounded-2xl mb-4 2xl:mb-8"
-    />
 
     <div class="flex mb-12">
       <div class="bg-lime w-auto rounded-md">
@@ -105,9 +93,7 @@
 </template>
 
 <script>
-import { ref, onUnmounted } from "vue";
-import db from "../firebase";
-import { onSnapshot, collection, query } from "firebase/firestore";
+import axios from "axios";
 import moment from "moment";
 
 export default {
@@ -115,8 +101,13 @@ export default {
 
   data() {
     return {
-      article: ref([]),
-      category: "",
+      article: {
+        title: "",
+        content: "",
+        date: "",
+        category: "",
+      },
+      base_url: "https://thetetiresidence.com/articles/wp-json/wp/v2",
     };
   },
 
@@ -125,35 +116,24 @@ export default {
       return moment(new Date(time)).fromNow();
     },
 
-    categoryName(slug) {
-      const getCategory = query(collection(db, "categories"));
-      onSnapshot(getCategory, (snapshot) => {
-        const foundCategory = snapshot.docs.find(
-          (doc) => doc.data().slug === slug
-        );
-        if (foundCategory) {
-          this.category = foundCategory.data().name;
-        }
-      });
+    categoryName(id) {
+      axios
+        .get(`${this.base_url}/categories/${id}`)
+        .then((res) => (this.article.category = res.data.name));
+    },
+
+    getData(data) {
+      this.article.title = data.title.rendered;
+      this.article.content = data.content.rendered;
+      this.article.date = data.date;
+      this.categoryName(data.categories[0]);
     },
   },
 
   mounted() {
-    const article = query(collection(db, "articles"));
-    const getArticle = onSnapshot(article, (snapshot) => {
-      const slugToFind = this.$route.params.id;
-      const foundArticle = snapshot.docs.find(
-        (doc) => doc.data().slug === slugToFind
-      );
-      if (foundArticle) {
-        this.article = foundArticle.data();
-        this.categoryName(foundArticle.data().category);
-        document.title = foundArticle.data().title;
-        document.getElementsByTagName("meta")["description"].content =
-          foundArticle.data().metaDescription;
-      }
-    });
-    onUnmounted(getArticle);
+    axios
+      .get(`${this.base_url}/posts?slug=${this.$route.params.id}`)
+      .then((res) => this.getData(res.data[0]));
   },
 };
 </script>

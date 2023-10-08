@@ -13,9 +13,9 @@
       <p
         v-for="item in categories"
         :key="item.id"
-        @click="filterArticle(item.slug)"
+        @click="filterArticle(item.id)"
         class="cursor-pointer whitespace-nowrap text-gray-400 hover:text-gray-900"
-        :class="[item.slug === activeCategory ? 'text-gray-900' : '']"
+        :class="[item.id === activeCategory ? 'text-gray-900' : '']"
       >
         {{ item.name }}
       </p>
@@ -28,8 +28,8 @@
         <router-link :to="{ name: 'ArticleDetail', params: { id: item.slug } }">
           <img
             class="h-48 w-full object-cover rounded-2xl"
-            :src="item.image"
-            :alt="item.altImage"
+            src="https://dummyimage.com/720x400"
+            alt="img"
           />
           <div class="flex items-center space-x-2 py-2">
             <svg
@@ -47,11 +47,11 @@
               />
             </svg>
             <p class="font-inter text-sm 2xl:text-lg text-gray-500">
-              {{ item.publishedDate }}
+              {{ formatDate(item.date) }}
             </p>
           </div>
           <h1 class="font-inter font-semibold lg:text-xl 2xl:text-2xl">
-            {{ item.title }}
+            {{ item.title.rendered }}
           </h1>
         </router-link>
       </div>
@@ -67,9 +67,8 @@
 
 <script>
 import { ref } from "vue";
-import db from "../firebase";
-import { onSnapshot, collection, query, where } from "firebase/firestore";
 import moment from "moment";
+import axios from "axios";
 
 export default {
   name: "Articles",
@@ -79,50 +78,33 @@ export default {
       categories: ref([]),
       articles: ref([]),
       activeCategory: "",
+      base_url: "https://thetetiresidence.com/articles/wp-json/wp/v2",
     };
   },
 
   methods: {
     fetchCategory() {
-      const category = query(collection(db, "categories"));
-      onSnapshot(category, (snapshot) => {
-        this.categories = snapshot.docs.map((doc) => {
-          return {
-            id: doc.id,
-            name: doc.data().name,
-            slug: doc.data().slug,
-          };
-        });
-      });
+      axios
+        .get(`${this.base_url}/categories`)
+        .then((res) => (this.categories = res.data));
     },
 
-    filterArticle(category) {
-      let article;
-
-      if (category) {
-        article = query(
-          collection(db, "articles"),
-          where("category", "==", category)
-        );
-        this.activeCategory = category;
+    filterArticle(id) {
+      if (id) {
+        axios
+          .get(`${this.base_url}/posts?categories=${id}`)
+          .then((res) => (this.articles = res.data));
+        this.activeCategory = id;
       } else {
-        article = query(collection(db, "articles"));
+        axios
+          .get(`${this.base_url}/posts`)
+          .then((res) => (this.articles = res.data));
         this.activeCategory = "";
       }
+    },
 
-      onSnapshot(article, (snapshot) => {
-        this.articles = snapshot.docs.map((doc) => {
-          return {
-            id: doc.id,
-            title: doc.data().title,
-            slug: doc.data().slug,
-            category: doc.data().category,
-            publishedDate: moment(new Date(doc.data().publishedDate)).fromNow(),
-            image: doc.data().imageUrl1,
-            altImage: doc.data().altImage1,
-          };
-        });
-      });
+    formatDate(date) {
+      return moment(new Date(date)).fromNow();
     },
   },
 
