@@ -127,6 +127,10 @@ export default {
       this.article.content = data.content.rendered;
       this.article.date = data.date;
       this.categoryName(data.categories[0]);
+
+      document.title = data.yoast_head_json.og_title;
+      document.getElementsByTagName("meta")["description"].content =
+        data.yoast_head_json.og_description;
     },
   },
 
