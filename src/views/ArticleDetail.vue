@@ -106,7 +106,7 @@ export default {
         date: "",
         category: "",
       },
-      base_url: "http://localhost:8080/articles/wp-json/wp/v2",
+      base_url: "https://thetetiresidence.com/articles/wp-json/wp/v2",
     };
   },
 
