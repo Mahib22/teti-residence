@@ -68,7 +68,6 @@
 <script>
 import { ref } from "vue";
 import moment from "moment";
-import axios from "axios";
 
 export default {
   name: "Articles",
@@ -83,22 +82,19 @@ export default {
   },
 
   methods: {
-    fetchCategory() {
-      axios
-        .get(`${this.base_url}/categories`)
-        .then((res) => (this.categories = res.data));
+    async fetchCategory() {
+      const response = await fetch(`${this.base_url}/categories`);
+      this.categories = await response.json();
     },
 
-    filterArticle(id) {
+    async filterArticle(id) {
       if (id) {
-        axios
-          .get(`${this.base_url}/posts?categories=${id}`)
-          .then((res) => (this.articles = res.data));
+        const response = await fetch(`${this.base_url}/posts?categories=${id}`);
+        this.articles = await response.json();
         this.activeCategory = id;
       } else {
-        axios
-          .get(`${this.base_url}/posts`)
-          .then((res) => (this.articles = res.data));
+        const response = await fetch(`${this.base_url}/posts`);
+        this.articles = await response.json();
         this.activeCategory = "";
       }
     },

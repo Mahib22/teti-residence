@@ -93,7 +93,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import moment from "moment";
 
 export default {
@@ -117,9 +116,9 @@ export default {
     },
 
     categoryName(id) {
-      axios
-        .get(`${this.base_url}/categories/${id}`)
-        .then((res) => (this.article.category = res.data.name));
+      fetch(`${this.base_url}/categories/${id}`)
+        .then((response) => response.json())
+        .then((data) => (this.article.category = data.name));
     },
 
     getData(data) {
@@ -135,9 +134,9 @@ export default {
   },
 
   mounted() {
-    axios
-      .get(`${this.base_url}/posts?slug=${this.$route.params.id}`)
-      .then((res) => this.getData(res.data[0]));
+    fetch(`${this.base_url}/posts?slug=${this.$route.params.id}`)
+      .then((response) => response.json())
+      .then((data) => this.getData(data[0]));
   },
 };
 </script>
