@@ -27,15 +27,12 @@
       <div v-for="item in articles" :key="item.id" class="mb-4">
         <router-link :to="{ name: 'ArticleDetail', params: { id: item.slug } }">
           <img
-            v-if="item.yoast_head_json.og_image"
-            class="h-48 w-full object-cover rounded-2xl"
-            :src="item.yoast_head_json.og_image[0]['url']"
-            alt="img"
-          />
-          <img
-            v-else
-            class="h-48 w-full object-cover rounded-2xl"
-            src="https://dummyimage.com/720x400"
+            class="object-cover rounded-2xl"
+            :src="[
+              item.yoast_head_json.og_image
+                ? item.yoast_head_json.og_image[0]['url']
+                : 'https://dummyimage.com/720x400',
+            ]"
             alt="img"
           />
           <div class="flex items-center space-x-2 py-2">
