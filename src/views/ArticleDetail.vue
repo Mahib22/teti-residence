@@ -24,6 +24,16 @@
       </div>
     </div>
 
+    <img
+      :src="[
+        article.hero
+          ? article.hero[0]['url']
+          : 'https://dummyimage.com/720x400',
+      ]"
+      alt="hero"
+      class="h-screen w-full object-cover rounded-2xl"
+    />
+
     <div class="py-4 lg:py-8 2xl:py-12 font-inter">
       <div class="flex gap-x-4">
         <span
@@ -126,6 +136,7 @@ export default {
       this.article.content = data.content.rendered;
       this.article.date = data.date;
       this.categoryName(data.categories[0]);
+      this.article.hero = data.yoast_head_json.og_image;
 
       document.title = data.yoast_head_json.og_title;
       document.getElementsByTagName("meta")["description"].content =
