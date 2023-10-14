@@ -126,13 +126,13 @@
       </li>
     </ul>
 
-    <router-link
-      active-class
-      to="#"
+    <a
+      href="https://wa.me/6281315013050"
+      target="_blank"
       class="relative btn-hover hidden lg:block text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime px-5 py-2.5 text-center mr-3 md:mr-0 2xl:text-3xl"
     >
       Book Now
-    </router-link>
+    </a>
   </nav>
 </template>
 

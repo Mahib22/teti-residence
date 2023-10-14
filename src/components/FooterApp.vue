@@ -176,11 +176,11 @@
       class="w-full h-full p-3 bg-white"
       :class="showBtn ? 'flex' : 'hidden'"
     >
-      <router-link
-        active-class
-        to="#"
+      <a
+        href="https://wa.me/6281315013050"
+        target="_blank"
         class="bg-lime text-white w-full h-full flex items-center justify-center font-inter"
-        >Book Now</router-link
+        >Book Now</a
       >
     </div>
   </div>
