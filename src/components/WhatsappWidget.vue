@@ -8,6 +8,7 @@
     <img
       alt="Chat on WhatsApp"
       src="../../public/img/icon/WhatsAppButtonGreenLarge.svg"
+      class="2xl:w-96"
     />
   </a>
 
