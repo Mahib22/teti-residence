@@ -278,11 +278,13 @@
       </div>
 
       <div class="lg:flex justify-end">
-        <button
+        <a
+          href="https://wa.me/6281315013050"
+          target="_blank"
           class="relative btn-hover w-full lg:w-1/4 text-lime border hover:text-white border-lime focus:ring-4 focus:outline-none focus:ring-lime py-3 2xl:py-6 2xl:text-2xl"
         >
           Book Now
-        </button>
+        </a>
       </div>
     </div>
   </section>
